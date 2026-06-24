@@ -1,0 +1,42 @@
+{
+  "name": "Astro Rocket (Node 24 + pnpm)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "node",
+  "updateRemoteUserUID": true,
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "containerEnv": {
+    "HOST": "0.0.0.0"
+  },
+  "forwardPorts": [
+    4321
+  ],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro dev server",
+      "onAutoForward": "notify"
+    }
+  },
+  "mounts": [
+    "source=astro-rocket-pnpm-store,target=/home/node/.local/share/pnpm/store,type=volume"
+  ],
+  "postCreateCommand": "pnpm install --frozen-lockfile",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "tamasfe.even-better-toml",
+        "redhat.vscode-yaml",
+        "ms-playwright.playwright",
+        "vitest.explorer",
+        "mikestead.dotenv",
+        "usernamehw.errorlens"
+      ]
+    }
+  }
+}

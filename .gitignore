@@ -15,9 +15,6 @@ dist/
 .env.*.local
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
 .idea/
 *.suo
 *.ntvs*
@@ -54,6 +51,7 @@ public/pagefind/
 
 # npm lockfile (pnpm only)
 package-lock.json
+.pnpm-store/
 
 # Internal docs
 southwell-astro-boilerplate-docs.md

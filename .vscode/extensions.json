@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "tamasfe.even-better-toml",
+    "redhat.vscode-yaml",
+    "ms-playwright.playwright",
+    "vitest.explorer",
+    "mikestead.dotenv",
+    "usernamehw.errorlens",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-wsl",
+    "ms-azuretools.vscode-docker"
+  ]
+}

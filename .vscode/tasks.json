@@ -1,0 +1,145 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev",
+      "detail": "Start Astro dev server with hot reload.",
+      "icon": {
+        "id": "play",
+        "color": "terminal.ansiGreen"
+      },
+      "type": "shell",
+      "command": "pnpm dev",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "build",
+      "detail": "Build the site for production.",
+      "icon": {
+        "id": "tools",
+        "color": "terminal.ansiBlue"
+      },
+      "type": "shell",
+      "command": "pnpm build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "preview",
+      "detail": "Preview the production build locally.",
+      "icon": {
+        "id": "eye",
+        "color": "terminal.ansiMagenta"
+      },
+      "type": "shell",
+      "command": "pnpm preview",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "check",
+      "detail": "Run Astro type checking.",
+      "icon": {
+        "id": "check",
+        "color": "terminal.ansiCyan"
+      },
+      "type": "shell",
+      "command": "pnpm check",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "lint",
+      "detail": "Run ESLint across the project.",
+      "icon": {
+        "id": "search",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "pnpm lint",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "lint:fix",
+      "detail": "Run ESLint and apply automatic fixes.",
+      "icon": {
+        "id": "wrench",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "pnpm lint:fix",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "format",
+      "detail": "Format code with Prettier.",
+      "icon": {
+        "id": "symbol-color",
+        "color": "terminal.ansiRed"
+      },
+      "type": "shell",
+      "command": "pnpm format",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "format:check",
+      "detail": "Check formatting with Prettier (no write).",
+      "icon": {
+        "id": "verified",
+        "color": "terminal.ansiRed"
+      },
+      "type": "shell",
+      "command": "pnpm format:check",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "test",
+      "detail": "Run unit/integration tests with Vitest.",
+      "icon": {
+        "id": "beaker",
+        "color": "terminal.ansiWhite"
+      },
+      "type": "shell",
+      "command": "pnpm test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test:e2e",
+      "detail": "Run end-to-end tests with Playwright.",
+      "icon": {
+        "id": "vm-running",
+        "color": "terminal.ansiRed"
+      },
+      "type": "shell",
+      "command": "pnpm test:e2e",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "validate",
+      "detail": "Run lint + check + build validation pipeline.",
+      "icon": {
+        "id": "shield",
+        "color": "terminal.ansiGreen"
+      },
+      "type": "shell",
+      "command": "pnpm validate",
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
