@@ -67,7 +67,7 @@ const locale = getLocaleFromPath(Astro.url.pathname);
 ---
 
 <!doctype html>
-<html lang={locale} class="scroll-smooth dark" data-theme="blue" data-theme-mode="system">
+<html lang={locale} class="dark scroll-smooth" data-theme="domoticarte" data-theme-mode="system">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -141,7 +141,21 @@ const locale = getLocaleFromPath(Astro.url.pathname);
          When mode === 'system', <html>.dark tracks prefers-color-scheme live. -->
     <script is:inline>
       (function () {
-        const COLOR_THEMES = ['orange', 'amber', 'lime', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'magenta'];
+        const COLOR_THEMES = [
+          'orange',
+          'domoticarte',
+          'amber',
+          'lime',
+          'emerald',
+          'teal',
+          'cyan',
+          'sky',
+          'blue',
+          'indigo',
+          'violet',
+          'purple',
+          'magenta',
+        ];
         const VALID_MODES = ['system', 'light', 'dark'];
 
         function getMode() {

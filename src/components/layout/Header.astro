@@ -30,8 +30,6 @@ import Icon from '@/components/ui/primitives/Icon/Icon.astro';
 import Logo from '@/components/ui/marketing/Logo/Logo.astro';
 import SearchModal from '@/components/layout/SearchModal.astro';
 import ThemeModeDropdown from '@/components/layout/ThemeModeDropdown.astro';
-import ThemeSelector from '@/components/layout/ThemeSelector.astro';
-import ThemeSelectorDropdown from '@/components/layout/ThemeSelectorDropdown.astro';
 import LanguageSwitcher from '@/components/layout/LanguageSwitcher.astro';
 import siteConfig from '@/config/site.config';
 import { isEnabled as i18nIsEnabled, getLocaleFromPath } from '@/i18n';
@@ -63,7 +61,6 @@ interface Props extends HTMLAttributes<'header'> {
   actions?: HeaderAction[];
   showSearch?: boolean;
   showThemeToggle?: boolean;
-  showThemeSelector?: boolean;
   showMobileMenu?: boolean;
   showActiveState?: boolean;
   logoText?: string;
@@ -101,7 +98,6 @@ const {
   actions = [],
   showSearch = true,
   showThemeToggle = true,
-  showThemeSelector = true,
   showMobileMenu = true,
   showSocialLinks = siteConfig.header?.showSocialLinks ?? false,
   showLanguageSwitcher = i18nIsEnabled(),
@@ -291,12 +287,6 @@ const buttonId = `${menuId}-button`;
               </div>
             )}
 
-            {showThemeSelector && (
-              <div class="hidden lg:flex">
-                <ThemeSelectorDropdown class={isFloating ? 'hdr-invert-text' : undefined} />
-              </div>
-            )}
-
             {showLanguageSwitcher && (
               <div class="hidden lg:flex">
                 <LanguageSwitcher class={isFloating ? 'hdr-invert-text' : undefined} alternates={languageAlternates} />
@@ -473,25 +463,12 @@ const buttonId = `${menuId}-button`;
               </ul>
             </section>
 
-            {showThemeSelector && (
-              <section class="mobile-menu-section">
-                <p class="mobile-menu-label">Theme</p>
-                <div
-                  class="mobile-menu-stagger flex items-center justify-between rounded-xl px-3 py-2.5"
-                  style={`--stagger-index: ${navItems.length}`}
-                >
-                  <span class="text-sm text-foreground-muted">Colour theme</span>
-                  <ThemeSelector />
-                </div>
-              </section>
-            )}
-
             {showLanguageSwitcher && (
               <section class="mobile-menu-section">
                 <p class="mobile-menu-label">Language</p>
                 <div
                   class="mobile-menu-stagger flex items-center justify-between rounded-xl px-3 py-2.5"
-                  style={`--stagger-index: ${navItems.length + (showThemeSelector ? 1 : 0)}`}
+                  style={`--stagger-index: ${navItems.length}`}
                 >
                   <span class="text-sm text-foreground-muted">Language</span>
                   <LanguageSwitcher alternates={languageAlternates} />
@@ -512,8 +489,8 @@ const buttonId = `${menuId}-button`;
                         rel="noopener noreferrer"
                         aria-label={label}
                         title={label}
-                        class="mobile-menu-social mobile-menu-stagger inline-flex h-11 w-11 items-center justify-center rounded-full border border-border-strong text-foreground-muted transition-colors"
-                        style={`--stagger-index: ${navItems.length + (showThemeSelector ? 1 : 0) + (showLanguageSwitcher ? 1 : 0) + sIdx}`}
+                        class="mobile-menu-social mobile-menu-stagger border-border-strong text-foreground-muted inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors"
+                        style={`--stagger-index: ${navItems.length + (showLanguageSwitcher ? 1 : 0) + sIdx}`}
                       >
                         <Icon name={icon} size="md" />
                       </a>
@@ -526,7 +503,7 @@ const buttonId = `${menuId}-button`;
             {showCta && (
               <div
                 class="mobile-menu-stagger mobile-menu-cta-wrap pt-2"
-                style={`--stagger-index: ${navItems.length + (showThemeSelector ? 1 : 0) + (showLanguageSwitcher ? 1 : 0) + mobileSocialLinks.length}`}
+                style={`--stagger-index: ${navItems.length + (showLanguageSwitcher ? 1 : 0) + mobileSocialLinks.length}`}
               >
                 <Button fullWidth href={ctaHref} target={ctaHref?.startsWith('http') ? '_blank' : undefined}>
                   {cta.icon && <Icon name={cta.icon} size="sm" />}

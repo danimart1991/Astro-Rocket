@@ -23,14 +23,13 @@
   <em>Perfect Lighthouse scores.</em>
 </p>
 
-
 ---
 
 ## Overview
 
 Astro Rocket is a **launch-ready starter theme** for web designers, developers, bloggers, and anyone who needs a portfolio website. Every page is already built and styled — you change the text and content, and your site is ready to go live.
 
-It ships with a full blog, a complete component library, a built-in SEO layer, dark mode, a contact form, and 12 colour themes you can switch with one click. It's built on Astro 7 and Tailwind CSS v4.
+It ships with a full blog, a complete component library, a built-in SEO layer, dark mode, a contact form, and 12 colour themes you can select in code via design tokens. It's built on Astro 7 and Tailwind CSS v4.
 
 **[Live demo → astrorocket.dev](https://astrorocket.dev)** · **[Built by Hans Martens → hansmartens.dev](https://hansmartens.dev)**
 
@@ -44,11 +43,11 @@ The following changes were made to the free Velocity theme to create Astro Rocke
 
 | Change | Velocity | Astro Rocket |
 |--------|----------|--------------|
-| **Theme switching** | Edit a CSS import file and rebuild | 12 colour swatches in the header — click one and the logo badge, blog images, and every brand color update live on screen. No file edits, no rebuilds. Selector can be removed from the header once you've chosen a color. |
-| **Colour themes** | 1 default theme | 12 Tailwind-based themes — all 12 shown as swatches in the header selector (Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, Blue, Indigo, Violet, Purple, Magenta) |
-| **Logo badge** | Requires a custom logo file | Auto-generated monogram badge — first letter of your site name on brand color, live-updates with active theme |
+| **Theme switching** | Edit a CSS import file and rebuild | Select the active colour theme in `src/styles/tokens/colors.css` by changing the imported theme file. |
+| **Colour themes** | 1 default theme | 12 Tailwind-based themes available in `src/styles/themes/` (Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, Blue, Indigo, Violet, Purple, Magenta) |
+| **Logo badge** | Requires a custom logo file | Auto-generated monogram badge — first letter of your site name on the active brand color |
 | **Favicon** | Static file to replace manually | Auto-generated SVG favicon — first letter + brand color, pre-rendered at build time from `site.config.ts`, no design tools needed |
-| **Blog image gradients** | Plain image containers | Every blog cover and card uses a brand-color gradient background that updates live when the active theme changes |
+| **Blog image gradients** | Plain image containers | Every blog cover and card uses a brand-color gradient background driven by the active design tokens |
 | **Icon system** | Basic SVG `Icon` component | Unified `Icon` component powered by Iconify — 350+ Lucide UI icons + 3000+ Simple Icons brand icons |
 | **Typing effect** | Not included | Hero section includes an animated typing effect |
 | **Colour mode** | Binary `localStorage` toggle | 3-state picker — System / Light / Dark in `localStorage`, with `prefers-color-scheme` live tracking under 'System' (see [Colour Mode](#colour-mode)) |
@@ -64,7 +63,7 @@ The following changes were made to the free Velocity theme to create Astro Rocke
 |---------|-------------|
 | **Astro 7** | Latest version with the Rust compiler, Vite 8, Content Layer API, and performance optimizations |
 | **Tailwind CSS v4** | CSS-first configuration with OKLCH color system and fluid typography |
-| **12 Colour Themes** | All 12 colour swatches are shown in the header dropdown — click one and the logo badge, blog image gradients, and every brand color update live instantly. No file edits, no rebuilds. The selector can be removed from the header once you've settled on a color. |
+| **12 Colour Themes** | 12 colour themes are included and can be activated in code by selecting the imported theme in `src/styles/tokens/colors.css`. |
 | **Scroll Progress Bar** | A thin 2px brand-coloured bar on the header edge that fills as you scroll. Enabled on the homepage (above the floating header), blog index, and post pages (below the solid header). Controlled via `showScrollProgress` and `scrollProgressPosition` props on the Header component. |
 | **Design Tokens** | Three-tier token architecture (reference → semantic → component) |
 | **57 Components** | 33 UI, 7 patterns, 1 hero, 4 layout, 4 blog, 7 landing, 3 SEO — all accessible with TypeScript |
@@ -238,7 +237,7 @@ astro-rocket/
 │   │   │   ├── content/     # CodeBlock
 │   │   │   └── marketing/   # Logo, CTA, NpmCopyButton, SocialProof, TerminalDemo
 │   │   ├── patterns/        # Composed patterns (ContactForm, SearchInput, StatCard, etc.)
-│   │   ├── layout/          # Header, Footer, Navigation, ThemeModeDropdown, ThemeSelector(Dropdown)
+│   │   ├── layout/          # Header, Footer, Navigation, ThemeModeDropdown
 │   │   ├── seo/             # SEO, JsonLd, Breadcrumbs
 │   │   ├── blog/            # Blog-specific components
 │   │   └── landing/         # Landing page components
@@ -345,9 +344,22 @@ Astro Rocket uses a three-tier design token system with OKLCH colors for percept
 
 ### Switching Themes
 
-Astro Rocket ships with 12 colour themes, all based on Tailwind's color palette. All 12 are shown as colour swatches in the header dropdown (`ThemeSelectorDropdown`) on desktop and in the mobile menu (`ThemeSelector`). Clicking a swatch applies the theme instantly — the logo badge, blog image gradients, and every brand color on the page update live. No file edits, no rebuilds. This is the key difference from Velocity, where switching theme requires editing a CSS import file and rebuilding.
+Astro Rocket ships with 12 colour themes, all based on Tailwind's color palette. Theme selection is code-driven: choose one active theme by importing it in `src/styles/tokens/colors.css`.
 
-The 12 themes in order: Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, Blue (default), Indigo, Violet, Purple, and Magenta. The `themes` array in `src/components/layout/ThemeSelector.astro` controls which swatches are shown and in what order. You can also **remove the selector from the header entirely** once you've settled on a color — just remove `showThemeSelector` from the layout file.
+To switch theme:
+
+1. Open `src/styles/tokens/colors.css`
+2. Replace the current theme import with the one you want
+3. Rebuild or restart dev server if needed
+
+Example:
+
+```css
+@import './primitives.css';
+@import '../themes/domoticarte.css';
+```
+
+The 12 themes available are: Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, Blue, Indigo, Violet, Purple, and Magenta.
 
 The theme files live in `src/styles/themes/`:
 
@@ -434,7 +446,7 @@ import ThemeModeDropdown from '@/components/layout/ThemeModeDropdown.astro';
 
 The full design — bootstrap script, dropdown anatomy, the live "Currently dark/light" sub-line under 'System', and how two component instances stay state-synced — is written up in the [System, Light, Dark blog post](https://astrorocket.dev/blog/colour-mode-system).
 
-> **Why `localStorage` for colour mode but `sessionStorage` for the colour palette?** They serve different intents. The colour mode is the user's accessibility / preference setting and should survive reloads and new tabs — `localStorage`. The 12-swatch colour palette is a brand-discovery toy that should reset on every new visit so first impressions stay on-brand — `sessionStorage`. Keeping them on different storage tiers is intentional, not accidental.
+> Colour mode persistence uses `localStorage` and is independent from colour-theme selection, which is configured in code via `src/styles/tokens/colors.css`.
 
 ### WCAG Contrast Requirements
 
@@ -561,7 +573,7 @@ Astro Rocket includes 57 components across 7 categories. All UI components use [
 | Category | Count | Components |
 |----------|-------|------------|
 | Hero | 1 | Hero section with centered/split layouts, grid pattern, and typing effect |
-| Layout | 6 | Header (with scroll progress bar), Footer, ThemeModeDropdown, ThemeSelector, ThemeSelectorDropdown, Analytics |
+| Layout | 4 | Header (with scroll progress bar), Footer, ThemeModeDropdown, Analytics |
 | Blog | 4 | ArticleHero, BlogCard, ShareButtons, RelatedPosts |
 | Landing | 5 | Credibility, LighthouseScores, TechStack, FeatureTabs, and more |
 | SEO | 3 | SEO, JsonLd, Breadcrumbs |

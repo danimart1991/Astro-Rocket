@@ -1,25 +1,25 @@
 ---
-title: "Astro Rocket"
-description: "Astro Rocket — my free, open-source Astro 7 theme. A finished website you launch by changing the text: 12 colour themes, 57 components, a 3-state colour mode, and a 100/100/100/100 Lighthouse score out of the box."
-url: "https://astrorocket.dev"
-repo: "https://github.com/hansmartensdev/Astro-Rocket"
-tags: ["Astro", "TypeScript", "Tailwind CSS", "Open Source"]
+title: 'Astro Rocket'
+description: 'Astro Rocket — my free, open-source Astro 7 theme. A finished website you launch by changing the text: 12 colour themes, 57 components, a 3-state colour mode, and a 100/100/100/100 Lighthouse score out of the box.'
+url: 'https://astrorocket.dev'
+repo: 'https://github.com/hansmartensdev/Astro-Rocket'
+tags: ['Astro', 'TypeScript', 'Tailwind CSS', 'Open Source']
 featured: true
 order: 0
 year: 2026
-role: "Designer & Developer"
-services: ["Design System", "Component Library", "Open Source"]
-meta: ["Free & open source", "MIT licence", "Astro 7", "Lighthouse 4×100"]
-icon: "rocket"
-image: "../../../assets/projects/hans-martens-dev-astro-rocket.jpg"
-imageAlt: "Astro Rocket — my open-source Astro 7 theme, shown on its astrorocket.dev demo."
+role: 'Designer & Developer'
+services: ['Design System', 'Component Library', 'Open Source']
+meta: ['Free & open source', 'MIT licence', 'Astro 7', 'Lighthouse 4×100']
+icon: 'rocket'
+image: '../../../assets/projects/hans-martens-dev-astro-rocket.jpg'
+imageAlt: 'Astro Rocket — my open-source Astro 7 theme, shown on its astrorocket.dev demo.'
 ---
 
 import LighthouseScoresGrid from '@/components/landing/LighthouseScoresGrid.astro';
 
 ## What it is
 
-**Astro Rocket** is my own free, open-source theme, built on **Astro 7** and **Tailwind CSS v4**. It isn't a boilerplate you spend a week wiring up — it's a finished website. Every page is already designed and built, so you change the text, pick a colour, and go live.
+**Astro Rocket** is my own free, open-source theme, built on **Astro 7** and **Tailwind CSS v4**. It isn't a boilerplate you spend a week wiring up — it's a finished website. Every page is already designed and built, so you change the text, set your colour theme in code, and go live.
 
 I made it for the people I know best: designers, freelancers, and developers who want a site that already looks finished on day one. It's MIT-licensed, [up on GitHub](https://github.com/hansmartensdev/Astro-Rocket), and listed on the [official Astro themes directory](https://astro.build/themes/details/astro-rocket/). The full thing runs live at [astrorocket.dev](https://astrorocket.dev).
 
@@ -29,15 +29,15 @@ I made it for the people I know best: designers, freelancers, and developers who
   <LighthouseScoresGrid />
 </div>
 
-The whole point was a starter that scores **100 on all four Lighthouse categories — Performance, Accessibility, Best Practices, and SEO — out of the box**, on both mobile and desktop. And not on a stripped-back demo page: the full site, with the animations, the theme switcher, the typed headline, and the contact form all running.
+The whole point was a starter that scores **100 on all four Lighthouse categories — Performance, Accessibility, Best Practices, and SEO — out of the box**, on both mobile and desktop. And not on a stripped-back demo page: the full site, with the animations, colour mode toggle, typed headline, and contact form all running.
 
 That score isn't something I bolt on at the end. It comes from Astro shipping **zero JavaScript by default** and me refusing to undo that. If you want the plain-language version of what the four numbers mean, I wrote it up in [the Lighthouse post](https://hansmartens.dev/blog/lighthouse-score-explained).
 
-## Twelve themes, one click
+## Twelve themes, code-first
 
-Astro Rocket ships **twelve colour themes** — Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, **Blue**, Indigo, Violet, Purple, and Magenta. They sit as swatches in the header: click one and every brand colour on the page — buttons, links, the auto-generated logo badge, the blog-cover gradients — updates live, no rebuild. **Blue is the default.** Once you've settled on a colour, you can pull the selector out of the header and keep everything else.
+Astro Rocket ships **twelve colour themes** — Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, **Blue**, Indigo, Violet, Purple, and Magenta. Pick one in code via `src/styles/tokens/colors.css` and the entire UI follows that token set: buttons, links, logo badge, blog-cover gradients, and focus states.
 
-Underneath it's just CSS custom properties scoped to a `data-theme` attribute, so the browser does all the work and the server never has to think about it.
+Underneath it's CSS custom properties scoped to the active theme, so the browser does the work and the server never has to think about it.
 
 ## System, Light, Dark
 
