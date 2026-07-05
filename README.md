@@ -33,31 +33,11 @@ It ships with a full blog, a complete component library, a built-in SEO layer, d
 
 **[Live demo → astrorocket.dev](https://astrorocket.dev)** · **[Built by Hans Martens → hansmartens.dev](https://hansmartens.dev)**
 
-> **Astro Rocket is a fork of [Velocity](https://github.com/southwellmedia/velocity) by [Southwell Media](https://southwellmedia.com).** Velocity is the foundation — a powerful Astro boilerplate with a comprehensive design system and component library. Full credit to the Southwell Media team for that work. Astro Rocket builds on it with a different goal: a complete, ready-to-launch website where you only change the text to make it your own.
+> **Origins & credits.** Astro Rocket was originally forked from [Velocity](https://github.com/southwellmedia/velocity) by [Southwell Media](https://southwellmedia.com). Velocity provided the solid base — a well-engineered Astro boilerplate with a thoughtful design system and component library — and full credit for that foundation goes to the Southwell Media team. Since then, Astro Rocket has evolved into a theme in its own right, with far more to offer than the original: live colour-theme switching, built-in i18n, static search, project galleries with video, blog comments, durable internal links, and much more — see [What Astro Rocket has to offer](#what-astro-rocket-has-to-offer) below.
 
 ---
 
-## What changed from Velocity
-
-The following changes were made to the free Velocity theme to create Astro Rocket:
-
-| Change | Velocity | Astro Rocket |
-|--------|----------|--------------|
-| **Theme switching** | Edit a CSS import file and rebuild | Select the active colour theme in `src/styles/tokens/colors.css` by changing the imported theme file. |
-| **Colour themes** | 1 default theme | 12 Tailwind-based themes available in `src/styles/themes/` (Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, Blue, Indigo, Violet, Purple, Magenta) |
-| **Logo badge** | Requires a custom logo file | Auto-generated monogram badge — first letter of your site name on the active brand color |
-| **Favicon** | Static file to replace manually | Auto-generated SVG favicon — first letter + brand color, pre-rendered at build time from `site.config.ts`, no design tools needed |
-| **Blog image gradients** | Plain image containers | Every blog cover and card uses a brand-color gradient background driven by the active design tokens |
-| **Icon system** | Basic SVG `Icon` component | Unified `Icon` component powered by Iconify — 350+ Lucide UI icons + 3000+ Simple Icons brand icons |
-| **Typing effect** | Not included | Hero section includes an animated typing effect |
-| **Colour mode** | Binary `localStorage` toggle | 3-state picker — System / Light / Dark in `localStorage`, with `prefers-color-scheme` live tracking under 'System' (see [Colour Mode](#colour-mode)) |
-| **Target audience** | Developers & agencies | Web designers, developers, bloggers, and portfolio sites |
-| **Ready to launch** | Boilerplate starting point | Fully styled pages — replace the text and your site is live |
-| **Maintained by** | Southwell Media | Hans Martens |
-
----
-
-## Key Features
+## What Astro Rocket has to offer
 
 | Feature | Description |
 |---------|-------------|
@@ -77,7 +57,7 @@ The following changes were made to the free Velocity theme to create Astro Rocke
 | **Content Collections** | Type-safe blog, pages, authors, and FAQs with Zod validation |
 | **API Routes** | Contact form and newsletter endpoints with validation |
 | **Table of Contents** | Optional table of contents on blog posts, auto-generated from MDX headings, with three layouts: inline card, sticky desktop sidebar, or `auto` (sidebar on `xl+`, inline card below). Includes `IntersectionObserver` scroll-spy. Off by default; per-post `toc: false` in frontmatter hides on a single post |
-| **Blog Comments (Giscus / Cusdis)** | Optional comments at the bottom of blog posts via a pluggable provider — [Giscus](https://giscus.app) (GitHub Discussions) or the privacy-friendly [Cusdis](https://cusdis.com) (hosted or self-hosted). Choose with `comments.provider`. **Lazy-loaded** so readers who don't scroll to comments pay zero network cost; reserved `min-height` prevents CLS. Theme follows the site's light/dark mode. Off by default; per-post `comments: false` in frontmatter hides on a single post |
+| **Blog Comments (Giscus / Cusdis / Artalk)** | Optional comments at the bottom of blog posts via a pluggable provider — [Giscus](https://giscus.app) (GitHub Discussions), the privacy-friendly [Cusdis](https://cusdis.com) (hosted or self-hosted), or self-hosted [Artalk](https://artalk.js.org) (point `comments.artalk.server` at your own instance — use an `https://` URL in production). Choose with `comments.provider`. **Lazy-loaded** so readers who don't scroll to comments pay zero network cost; reserved `min-height` prevents CLS. Theme and language follow the site. Off by default; per-post `comments: false` in frontmatter hides on a single post |
 | **Durable Internal Links** | Link between posts by a stable canonical id with `<PostLink uid="…">` instead of a slug, so renaming a post never breaks inbound links. Ids resolve to the correct locale-aware URL at build time, and a broken reference **fails the build** rather than shipping a 404. Add an optional `uid` to a post's frontmatter to make it linkable |
 | **Build-Time Content Validation** | The build fails with a clear error if two pieces of content resolve to the same URL within a locale (duplicate slugs across posts, projects, and pages), or if two posts claim the same canonical id — catching silent content mistakes before they ship |
 | **Independent Footer Menu** | Header and footer navigation configured separately in `nav.config.ts` (`navItems`, `footerNavItems`, `legalLinks`) — add a Privacy or Imprint link to the footer without cluttering the main nav |
@@ -109,27 +89,47 @@ const i18nConfig: I18nConfig = {
 
 Astro's native i18n is wired up automatically when `enabled: true` AND `locales.length > 1`. With `prefixDefaultLocale: false`, the default locale stays at the site root and additional locales live under `/<locale>/`.
 
-#### Adding a page in another language
+#### Pages in another language
 
-Astro is filesystem-routed, so a Dutch "About" page is just a new file:
+The bundled pages — the **home page, About, Services and Contact** — are already locale-aware, exactly like the blog and projects. Enable a second locale and `/<locale>`, `/<locale>/about`, `/<locale>/services` and `/<locale>/contact` are generated automatically, so the `LanguageSwitcher` never lands on a 404. You do **not** create `src/pages/<locale>/about.astro` files for these — remove any you added previously, as they would collide with the generated routes.
 
-```
-src/pages/about.astro          →  /about      (English, default)
-src/pages/nl/about.astro       →  /nl/about   (Dutch — you create this)
-```
+Their text lives in the locale dictionaries under the `pages.*` keys (`pages.home`, `pages.about`, `pages.services`, `pages.contact`). **To translate a page, copy those keys from `src/i18n/en.json` into your locale file (e.g. `src/i18n/nl.json`) and translate the values — there is no markup to touch.** Anything you haven't translated yet falls back to the default locale, so a localized page is never blank. The design lives in one shared view per page under `src/components/pages/views/`, rendered by both the default route and the `/<locale>/…` route.
 
-The simplest approach is to import a shared template component and pass the locale as a prop:
+Adding your **own** new page follows the same three-file pattern — a view holding the design, a default-locale route, and a locale-prefixed route:
 
 ```astro
 ---
-// src/pages/nl/about.astro
-import AboutPage from '@/components/pages/AboutPage.astro';
+// src/components/pages/views/PricingView.astro — the design; copy comes from the dictionary
+import { t, defaultLocale } from '@/i18n';
+interface Props { locale?: string }
+const { locale = defaultLocale } = Astro.props;
 ---
-
-<AboutPage locale="nl" />
+<h1>{t('pages.pricing.heading', locale)}</h1>
 ```
 
-…or just write a Dutch version of the page directly. The `LanguageSwitcher` automatically builds links to `/nl/<current-path>` for every configured locale, so as soon as the file exists, visitors can switch to it.
+```astro
+---
+// src/pages/pricing.astro          →  /pricing            (default locale)
+import PricingView from '@/components/pages/views/PricingView.astro';
+import { defaultLocale } from '@/i18n';
+---
+<PricingView locale={defaultLocale} />
+```
+
+```astro
+---
+// src/pages/[locale]/pricing.astro →  /<locale>/pricing   (every other locale)
+import PricingView from '@/components/pages/views/PricingView.astro';
+import { getSecondaryLocales } from '@/i18n';
+export function getStaticPaths() {
+  return getSecondaryLocales().map((locale) => ({ params: { locale } }));
+}
+const { locale } = Astro.params;
+---
+<PricingView locale={locale} />
+```
+
+For lists and structured sections (an array of FAQ items, feature cards, …) use `tData('pages.pricing.faqs', locale)`, which returns arrays/objects from the dictionary with the same default-locale fallback as `t()`. Or, for a quick one-off, just write a standalone `src/pages/nl/pricing.astro` directly. Either way, the `LanguageSwitcher` automatically builds links to `/<locale>/<current-path>` for every configured locale.
 
 #### Translating UI strings
 
@@ -175,7 +175,7 @@ src/content/projects/nl/studio-portfolio.mdx
 
 > **Switching the default locale.** Changing `defaultLocale` in `i18n.config.ts` is a routing label — it controls which locale serves at the site root, not which content folder gets read. To make a different language the default, also rename the matching content folder (e.g. `src/content/blog/en/` → `src/content/blog/zh-CN/`) so the root URL resolves to the right posts. The locale code in `i18n.config.ts` and the folder name under `src/content/blog/` must match.
 
-> **Localized blog routing is automatic.** Enable a locale in `i18n.config.ts`, drop posts under its folder (e.g. `src/content/blog/nl/`), and the whole blog is served at that locale's prefix with no extra wiring: the index (`/nl/blog`), individual posts (`/nl/blog/<slug>`), pagination (`/nl/blog/page/N`) and tag archives (`/nl/blog/tag/<tag>`) are all generated, and every in-locale link — cards, tag chips, pagination, breadcrumbs, related posts — stays inside that locale. The `defaultLocale` keeps its prefix-free URLs (`/blog`). A locale with no posts yet still gets a `/<locale>/blog` index that shows the empty state, so the `LanguageSwitcher` never lands on a 404. You do **not** create `src/pages/<locale>/blog*` files yourself — remove any you added previously, as they would collide with the generated routes. (Static pages like `/nl/about` are still yours to create, as shown above.)
+> **Localized blog routing is automatic.** Enable a locale in `i18n.config.ts`, drop posts under its folder (e.g. `src/content/blog/nl/`), and the whole blog is served at that locale's prefix with no extra wiring: the index (`/nl/blog`), individual posts (`/nl/blog/<slug>`), pagination (`/nl/blog/page/N`) and tag archives (`/nl/blog/tag/<tag>`) are all generated, and every in-locale link — cards, tag chips, pagination, breadcrumbs, related posts — stays inside that locale. The `defaultLocale` keeps its prefix-free URLs (`/blog`). A locale with no posts yet still gets a `/<locale>/blog` index that shows the empty state, so the `LanguageSwitcher` never lands on a 404. You do **not** create `src/pages/<locale>/blog*` files yourself — remove any you added previously, as they would collide with the generated routes. (The bundled static pages — home, About, Services and Contact — are generated for every locale the same way; you translate their text in `src/i18n/<locale>.json`, as shown in *Pages in another language* above.)
 >
 > On blog posts, the `LanguageSwitcher` and the `hreflang` tags link to each translation's **real** URL — paired by canonical `uid` when the posts declare one (so a translation can live at a different slug, `/blog/hello` ↔ `/nl/blog/hallo`), otherwise by an identical slug. A locale with no translation of the current post is dropped from `hreflang`, and the switcher falls back to that locale's blog index instead of a dead URL. (Other page types resolve alternates by swapping the locale segment, which is correct when slugs match across locales.)
 >
@@ -184,10 +184,6 @@ src/content/projects/nl/studio-portfolio.mdx
 #### Performance
 
 The whole system is build-time. No client-side routing, no framework hydration for the `LanguageSwitcher` — just static HTML and a tiny vanilla-JS open/close handler for the dropdown panel. Verified zero output-size delta on the disabled path between 1.2.1 and 1.3.0.
-
-#### Comparing to Southwell Media's CLI
-
-[`create-velocity-astro`](https://github.com/southwellmedia/create-velocity-astro) is the upstream Velocity CLI for scaffolding a fresh project with i18n. **It is not needed for Astro Rocket** — the equivalent feature is built in here. If you ever do run it, run it in an **empty directory**: it scaffolds a fresh Velocity project and will overwrite an existing directory (including a cloned Astro Rocket repo) if you confirm the "Directory already exists" prompt.
 
 ---
 
@@ -819,19 +815,20 @@ vercel
 netlify deploy --prod
 ```
 
-### Cloudflare Pages
+### Cloudflare
+
+Astro's Cloudflare adapter (`@astrojs/cloudflare`) targets **Cloudflare Workers** (the platform behind today's "Workers & Pages"): the prerendered pages are served as static assets and the `/api/*` routes — the contact form and newsletter — run as the Worker. Build with the Cloudflare target, then deploy with Wrangler:
 
 ```bash
-wrangler pages deploy dist
+DEPLOY_TARGET=cloudflare pnpm build
+npx wrangler deploy
 ```
 
-### Static Export
+The build generates the Worker and static-asset config automatically; the bundled `wrangler.toml` adds the `nodejs_compat` flag the API routes need. Prefer the dashboard? In **Workers & Pages → Create → Connect to Git**, set the build command to `DEPLOY_TARGET=cloudflare pnpm build`. Either way, add your secrets — `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `NEWSLETTER_API_KEY` — plus `SITE_URL` as environment variables so the contact form and newsletter work.
 
-Build outputs to `dist/` for any static host:
+### Static export (no serverless)
 
-```bash
-pnpm build
-```
+`pnpm build` uses the default Vercel adapter and writes the static site to `dist/client/`. You can host that folder on any static host — but the `/api/*` routes (contact form, newsletter) need a serverless/edge runtime, so on a purely static host you'd wire those forms up to an external service instead.
 
 ---
 
@@ -937,11 +934,11 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## Links
 
 - [Astro Rocket on GitHub](https://github.com/hansmartensdev/astro-rocket)
-- [Velocity — the original theme](https://github.com/southwellmedia/velocity) by [Southwell Media](https://southwellmedia.com)
+- [Velocity](https://github.com/southwellmedia/velocity) by [Southwell Media](https://southwellmedia.com) — the theme Astro Rocket was originally forked from
 - [Astro Documentation](https://docs.astro.build)
 - [Tailwind CSS v4](https://tailwindcss.com/docs)
 
 ---
 
 **Astro Rocket** is designed and maintained by [Hans Martens](https://hansmartens.dev).
-Built on [Velocity](https://github.com/southwellmedia/velocity) — the original theme by [Southwell Media](https://southwellmedia.com).
+Originally forked from [Velocity](https://github.com/southwellmedia/velocity) by [Southwell Media](https://southwellmedia.com) — credit to them for the solid base it grew from.
