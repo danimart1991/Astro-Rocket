@@ -37,18 +37,6 @@ It ships with a full blog, a complete component library, a built-in SEO layer, d
 
 ---
 
-## Showcase
-
-Real sites built and shipped with Astro Rocket:
-
-| Site | Author | Notes |
-|------|--------|-------|
-| [LinkPress](https://linkpress.app/) | Mithun A. Sridharan | Deployed on Cloudflare |
-
-Built something with Astro Rocket? [Submit your site](https://github.com/hansmartensdev/Astro-Rocket/issues/new?template=showcase_submission.yml) — a live URL and a line about the project is all it takes.
-
----
-
 ## What Astro Rocket has to offer
 
 | Feature | Description |
@@ -75,6 +63,7 @@ Built something with Astro Rocket? [Submit your site](https://github.com/hansmar
 | **Independent Footer Menu** | Header and footer navigation configured separately in `nav.config.ts` (`navItems`, `footerNavItems`, `legalLinks`) — add a Privacy or Imprint link to the footer without cluttering the main nav |
 | **Static Search (Pagefind)** | Site-wide search in the header — a ⌘K / Ctrl+K modal powered by a [Pagefind](https://pagefind.app) index generated at build time. Zero JS until the modal opens; works on every deploy target. Hide it with `showSearch={false}` on the Header |
 | **Project Galleries** | Multiple images per project: a `gallery` array in frontmatter swaps the hero image for a swipeable carousel, and the `<ProjectGallery>` MDX component renders an in-body carousel with a click-to-zoom lightbox. See [Project Galleries](#project-galleries) |
+| **YouTube Embeds (Click-to-Play)** | `<YouTube id="…" title="…" />` in any MDX post or page renders a lightweight thumbnail facade — **zero YouTube JavaScript and no third-party cookies until the reader presses play**, then the player loads from privacy-friendly `youtube-nocookie.com`. Keeps article pages at Lighthouse 100; self-hosted files just use a native `<video>` tag |
 | **React Islands** | Optional client-side interactivity where needed |
 
 ### Internationalization (i18n)
@@ -564,7 +553,7 @@ Astro Rocket includes 57 components across 7 categories. All UI components use [
 | SocialProof | Testimonial and trust indicator cards |
 | TerminalDemo | Animated terminal demonstration (React) |
 
-### Pattern Components (7)
+### Pattern Components (8)
 
 | Component | Description |
 |-----------|-------------|
@@ -575,6 +564,7 @@ Astro Rocket includes 57 components across 7 categories. All UI components use [
 | PasswordInput | Password input with visibility toggle |
 | StatCard | Statistics display card |
 | EmptyState | Empty state placeholder with icon and action |
+| YouTube | Privacy-friendly click-to-play video embed for MDX posts and pages |
 
 ### Other Categories
 
