@@ -27,4 +27,11 @@ Restore a single file to its original design:
 
     git checkout archive/original-design -- <path>
 
+## Related
+
+Since 16 July 2026 the default design on `main` follows this original look
+again. The counterpart branch `archive/brand-consistency-design` holds the
+full #551 brand-consistency design as an official variant for anyone who
+prefers it.
+
 Do not merge or delete this branch — it exists only as a reference point.
