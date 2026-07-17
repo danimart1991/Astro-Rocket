@@ -7,6 +7,7 @@ import ProjectTagList from '@/components/projects/ProjectTagList.astro';
 import HeroGrid from '@/components/effects/HeroGrid.astro';
 import HeroBeam from '@/components/effects/HeroBeam.astro';
 import type { GallerySlide } from '@/lib/gallery';
+import { getLocaleFromPath } from '@/i18n';
 
 interface Props {
   title: string;
@@ -41,6 +42,9 @@ const slides: GallerySlide[] =
       ? [{ src: image, alt: imageAlt || title }]
       : [];
 const hasMedia = slides.length > 0;
+
+// Tag links must stay inside the active locale (`/<locale>/projects/tag/…`).
+const locale = getLocaleFromPath(Astro.url.pathname);
 ---
 
 <header class="relative isolate overflow-hidden pt-[var(--space-page-top-sm)] pb-[var(--space-section-md)]">
@@ -65,7 +69,7 @@ const hasMedia = slides.length > 0;
         </p>
 
         {tags.length > 0 && (
-          <ProjectTagList tags={tags} class="mb-[var(--space-stack-lg)]" />
+          <ProjectTagList tags={tags} locale={locale} class="mb-[var(--space-stack-lg)]" />
         )}
 
         {meta.length > 0 && (
@@ -84,13 +88,13 @@ const hasMedia = slides.length > 0;
         {(url || repo) && (
           <div class="flex flex-wrap gap-3 mb-[var(--space-stack-lg)]">
             {url && (
-              <Button href={url} target="_blank" rel="noopener noreferrer" size="md">
+              <Button href={url} target="_blank" rel="noopener noreferrer" size="md" class="project-live-btn">
                 <Icon name="external-link" size="sm" />
                 View live site
               </Button>
             )}
             {repo && (
-              <Button href={repo} target="_blank" rel="noopener noreferrer" variant="outline" size="md">
+              <Button href={repo} target="_blank" rel="noopener noreferrer" variant="brand-outline" size="md">
                 <Icon name="github" size="sm" />
                 View source
               </Button>

@@ -12,6 +12,7 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import Icon from '@/components/ui/primitives/Icon/Icon.astro';
 import Badge from '@/components/ui/data-display/Badge/Badge.astro';
 import Card from '@/components/ui/data-display/Card/Card.astro';
+import ProofTile from '@/components/ui/data-display/ProofTile/ProofTile.astro';
 import Button from '@/components/ui/form/Button/Button.astro';
 import { Hero } from '@/components/hero';
 import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
@@ -58,7 +59,6 @@ const cta = tData<{ badge: string; heading: string; description: string; primary
 )!;
 
 const contactUrl = localizedPath('/contact', locale);
-const projectsUrl = localizedPath('/projects', locale);
 const aboutUrl = localizedPath('/about', locale);
 ---
 <PageLayout
@@ -115,10 +115,6 @@ const aboutUrl = localizedPath('/about', locale);
               {paragraph}
             </p>
           ))}
-          <Button variant="outline" href={contactUrl} class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
-            {design.ctaLabel}
-            <Icon name="arrow-right" size="sm" />
-          </Button>
         </div>
         <!-- Card -->
         <div class="sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0" data-reveal data-reveal-eager data-reveal-ease="smooth">
@@ -140,12 +136,6 @@ const aboutUrl = localizedPath('/about', locale);
               ))}
             </ul>
           </Card>
-        </div>
-        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
-          <Button variant="outline" href={contactUrl}>
-            {design.ctaLabel}
-            <Icon name="arrow-right" size="sm" />
-          </Button>
         </div>
       </div>
     </div>
@@ -171,10 +161,6 @@ const aboutUrl = localizedPath('/about', locale);
               {paragraph}
             </p>
           ))}
-          <Button variant="outline" href={projectsUrl} class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
-            {development.ctaLabel}
-            <Icon name="arrow-right" size="sm" />
-          </Button>
         </div>
         <!-- Card -->
         <div class="sm:max-w-xl sm:mx-auto glitch:order-1 glitch:max-w-none glitch:mx-0" data-reveal data-reveal-ease="smooth">
@@ -196,12 +182,6 @@ const aboutUrl = localizedPath('/about', locale);
               ))}
             </ul>
           </Card>
-        </div>
-        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
-          <Button variant="outline" href={projectsUrl}>
-            {development.ctaLabel}
-            <Icon name="arrow-right" size="sm" />
-          </Button>
         </div>
       </div>
     </div>
@@ -227,10 +207,6 @@ const aboutUrl = localizedPath('/about', locale);
               {paragraph}
             </p>
           ))}
-          <Button variant="outline" href={contactUrl} class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
-            {performance.ctaLabel}
-            <Icon name="arrow-right" size="sm" />
-          </Button>
         </div>
         <!-- Card -->
         <div class="sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0" data-reveal data-reveal-delay="1" data-reveal-ease="smooth">
@@ -253,12 +229,6 @@ const aboutUrl = localizedPath('/about', locale);
             </ul>
           </Card>
         </div>
-        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
-          <Button variant="outline" href={contactUrl}>
-            {performance.ctaLabel}
-            <Icon name="arrow-right" size="sm" />
-          </Button>
-        </div>
       </div>
     </div>
   </section>
@@ -268,7 +238,10 @@ const aboutUrl = localizedPath('/about', locale);
     <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8">
       <div class="flex flex-col items-center gap-4 text-center" data-reveal>
         <div class="flex flex-col items-center gap-6">
-          <Badge variant="brand" pill>{processSection.badge}</Badge>
+          <Badge variant="brand" pill>
+            <Icon name="list-checks" size="sm" />
+            {processSection.badge}
+          </Badge>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
             {processSection.heading}
           </h2>
@@ -280,19 +253,9 @@ const aboutUrl = localizedPath('/about', locale);
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {processSection.steps.map((step, i) => (
-          <Card hover data-reveal data-reveal-delay={i || undefined}>
-            <div class="flex flex-col items-center text-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 font-bold text-base shrink-0">
-                {i + 1}
-              </div>
-              <div>
-                <h3 class="text-base font-semibold text-foreground">{step.title}</h3>
-                <p class="text-sm text-foreground-muted leading-relaxed mt-1.5">
-                  {step.description}
-                </p>
-              </div>
-            </div>
-          </Card>
+          <ProofTile number={i + 1} title={step.title} data-reveal data-reveal-delay={i || undefined}>
+            {step.description}
+          </ProofTile>
         ))}
       </div>
     </div>
@@ -302,7 +265,10 @@ const aboutUrl = localizedPath('/about', locale);
   <section class="relative z-10 py-[var(--space-section-md)] bg-background-secondary border-t border-border">
     <!-- Mobile: flat section, no card -->
     <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
-      <Badge variant="brand" pill class="mb-6">{cta.badge}</Badge>
+      <Badge variant="brand" pill class="mb-6">
+        <Icon name="message-circle" size="sm" />
+        {cta.badge}
+      </Badge>
       <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
         {cta.heading}
       </h2>
@@ -314,7 +280,7 @@ const aboutUrl = localizedPath('/about', locale);
           {cta.primary}
           <Icon name="arrow-right" size="sm" />
         </Button>
-        <Button size="lg" variant="outline" href={aboutUrl}>
+        <Button size="lg" variant="brand-outline" href={aboutUrl}>
           {cta.secondary}
           <Icon name="arrow-right" size="sm" />
         </Button>
