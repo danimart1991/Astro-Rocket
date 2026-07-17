@@ -9,6 +9,7 @@
   "files.trimTrailingWhitespace": true,
   "search.exclude": {
     "**/node_modules": true,
+    "**/.pnpm-store": true,
     "**/dist": true,
     "**/.astro": true,
     "**/.vercel": true,
@@ -20,6 +21,7 @@
   },
   "files.watcherExclude": {
     "**/node_modules/**": true,
+    "**/.pnpm-store/**": true,
     "**/dist/**": true,
     "**/.astro/**": true,
     "**/.vercel/**": true,
@@ -56,12 +58,13 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
   "npm.packageManager": "pnpm",
   "tailwindCSS.includeLanguages": {
     "astro": "html"
   },
-  "vitest.commandLine": "pnpm vitest",
+  "vitest.vitestPackagePath": "node_modules/vitest/package.json",
+  "vitest.rootConfig": "vitest.config.ts",
   "playwright.reuseBrowser": true
 }
