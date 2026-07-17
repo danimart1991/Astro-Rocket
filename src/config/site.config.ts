@@ -244,14 +244,14 @@ export interface SiteConfig {
 }
 
 const siteConfig: SiteConfig = {
-  name: 'Astro Rocket',
+  name: 'domoticarte',
   description:
-    'Astro Rocket is a free, lightning-fast Astro 7 starter theme to build anything on — with 57+ designed components, 12 colour themes, dark mode, and built-in i18n on board.',
+    'domoticarte is a free, lightning-fast Astro 7 starter theme to build anything on — with 57+ designed components, 12 colour themes, dark mode, and built-in i18n on board.',
   tagline: 'Astro 7 starter theme to build anything on',
   footerNote: 'Free & open source · MIT licensed',
   url: SITE_URL || 'https://astrorocket.dev',
   ogImage: '/og-default.svg',
-  author: 'Hans Martens',
+  author: 'Daniel Martín',
   email: 'hello@hansmartens.dev',
   address: {
     street: '',
@@ -268,7 +268,7 @@ const siteConfig: SiteConfig = {
   ],
   header: {
     // Flip to `true` to show the social icons (incl. GitHub) in the header.
-    showSocialLinks: false,
+    showSocialLinks: true,
   },
   twitter: {
     site: 'https://x.com/hansmartens_dev',
@@ -346,7 +346,7 @@ const siteConfig: SiteConfig = {
   i18n: i18nConfig,
   branding: {
     logo: {
-      alt: 'Astro Rocket',
+      alt: 'domoticarte',
       // image: '/logo.svg', // Optional: set to a file in public/ to use a custom logo image instead of the letter monogram.
       imageUrl: '/favicon.svg',
     },
@@ -354,7 +354,7 @@ const siteConfig: SiteConfig = {
       svg: '/favicon.svg',
     },
     colors: {
-      themeColor: '#0083fe',
+      themeColor: '#399aff',
       backgroundColor: '#ffffff',
     },
   },

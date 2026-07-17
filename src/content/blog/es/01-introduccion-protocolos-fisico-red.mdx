@@ -1,0 +1,144 @@
+---
+title: 'Descubre la Domótica: Zigbee, Thread, WiFi y Más'
+description: 'Exploraremos los fundamentos de los protocolos de red utilizados en la domótica y el papel crucial que juegan los Hubs en la creación y gestión de estas redes.'
+publishedAt: 2024-05-17
+slug: introduccion-protocolos-fisico-red
+image: '../../../assets/blog/i18n-in-astro-rocket.svg'
+toc: true
+featured: false
+locale: es
+uid: '01-introduction-physical-network-protocols'
+categories:
+  - Fundamentos
+  - Redes
+tags:
+  - Zigbee
+  - Wi-Fi
+  - Thread
+  - Bluetooth
+  - Z-Wave
+  - Ethernet
+  - Radiofrecuencia
+  - Infrarrojo
+  - Fundamentos
+  - Redes
+  - Protocolos
+---
+
+import YouTube from '@/components/patterns/YouTube.astro';
+
+Llevo varios años ayudando en diferentes grupos de domótica, los que me conocéis sabréis que intento ayudar siempre que puedo, y durante todo este tiempo, he notado una cosa, aunque todo este mundo de la **domótica cada vez es más accesible**, los inicios son complicados, tiene cierta curva de aprendizaje y es fácil acabar mezclando conceptos.
+
+Y es por ello que me he propuesto crear una serie de videos y artículos que sirvan de introducción a todo este mundo, tanto para todos aquellos que estáis empezando, como para los que llevamos más tiempo y podemos seguir teniendo pequeñas dudas.
+
+<YouTube id="1GJ8UoHVLaI" title="Descubre la Domótica" />
+
+Vamos a ir paso a paso, empezando por la base, por lo más básico, **la capas física y de red**.
+
+> Y se lo que estás pensando, empezamos fuerte, pero puedes estar tranquilo, ya verás como gran parte de este artículo te suena.
+
+## Los protocolos de red
+
+Imagina que los dispositivos de tu red son como ciudades. Para que estas ciudades puedan intercambiar información (o “mercancías”), necesitan una red de carreteras. Estas carreteras son los protocolos de red.
+
+Al igual que las carreteras, los protocolos pueden ser de diferentes tipos. Algunos son como autopistas de alta velocidad (por ejemplo, _Wi-Fi_ o _Ethernet_), que permiten un rápido intercambio de grandes cantidades de datos, pero pueden necesitar más energía (o “combustible”). Otros pueden ser como caminos (por ejemplo, _Zigbee_ o _Z-Wave_), que son más lentos y tienen menos capacidad, pero consumen menos energía y pueden llegar a lugares donde las autopistas no pueden.
+
+Además, al igual que podemos transportar mercancías con un avión, por carreteras que sabemos están ahí, pero no podemos ver, también podemos hacerlo con la información, los “cables” en una red pueden ser invisibles, transmitiendo datos a través del aire.
+
+Vamos a ver los más típicos con unos ejemplos:
+
+### Radiofrecuencia (_RF_)
+
+La **Radiofrecuencia** o **_RF_** es el protocolo típico de mandos de garaje o alarmas.
+
+Un dispositivo emisor envía pequeños paquetes con códigos por medio de señales de radio en todas direcciones por el aire, que serán recibidos por un dispositivo receptor si se encuentra dentro del alcance, por lo que la comunicación no es bidireccional.
+
+Esto desemboca en un problema bastante grave, **no podrás conocer el estado del dispositivo receptor**, por poner un ejemplo, si tenemos una puerta de garaje controlada con un mando, aunque este mando pueda tener un solo botón para abrir y cerrar, o dos botones, uno para cada función, al pulsar el mando, si no estamos observando la puerta, no podrás saber si la puerta está o no abierta, o su posición exacta. La única solución, es añadir sensores extra a la puerta, o esperar un tiempo prudencial que pueda asegurarnos si está abierta o cerrada. Y, aun así, podría complicarse, pues existen mandos que permiten parar la puerta a mitad de una acción.
+
+Son dispositivos usados en local y como veremos al final, si quieres usar un móvil, _Tablet_, _PC_, o incluso un altavoz inteligente para que haga la función de mando, y como estos dispositivos no disponen de emisor de radiofrecuencia, necesitarás un Hub que actúe de mando y transforme la señal por ejemplo a _Wi-Fi_, que si está disponible en estos dispositivos.
+
+Como apunte, hay que tener cuidado con los dispositivos por radiofrecuencia, pues aun intentando clonar la señal de un mando, por ejemplo, con un dispositivo domótico con emisor de radiofrecuencia que funcione por _Wi-Fi_, muchas veces **los códigos de la señal emitida por el mando cambian por seguridad con cada pulsación**, y se hace, por tanto, imposible de copiar.
+
+### Infrarrojos (_IR_)
+
+La señal de **infrarrojos** o **_IR_**, usado en mandos de aire acondicionado, _Smart TV_, o incluso algunas bombillas, por ejemplo, estamos en un caso parecido a la radiofrecuencia, solo que, con los infrarrojos, **la señal se emite de manera direccional**, esto quiere decir que ambos dispositivos tienen que verse para poder enviar y recibir los datos. Lo que hace, además, que el alcance sea muy reducido, de unos 5 metros.
+
+Del mismo modo, aunque algunos móviles y portátiles antiguos disponen de emisor e incluso receptor de infrarrojos, **es algo que ha quedado en desuso**, ya ninguno de estos dispositivos suele traer compatibilidad con infrarrojos. De nuevo, necesitaremos un dispositivo intermedio para su control desde móvil, asistentes de voz y demás dispositivos domóticos.
+
+### _Bluetooth_ (_BT_)
+
+Un protocolo de red bastante conocido, **_Bluetooth_**, transmite por el aire en todas direcciones pequeños paquetes de datos entre dos dispositivos (como los anteriores), **con comunicación bidireccional**, tiene un alcance de unos 30m en condiciones ideales, y **un consumo muy pequeño** en sus últimas versiones. Con estas características, y aunque pueda parecer un protocolo ideal para domótica, tiene varios problemas.
+
+Por un lado, se usa poco porque su funcionamiento es local, necesitas otro dispositivo con _Bluetooth_ que actúe de cliente para controlar y realizar las lecturas de información del dispositivo domótico, como un móvil o un Hub. **Necesitas un emparejamiento previo**, lo que complica la configuración respecto a los dos protocolos anteriores.
+
+**Un mismo cliente no soporta muchos dispositivos _Bluetooth_ conectados a la vez**, por lo que deberemos tener varios dispositivos cliente en cuanto dispongamos de bastantes sensores _Bluetooth_ en casa.
+
+Por poner ejemplos de dispositivos que usan _Bluetooth_, tenemos diferentes sensores a pilas, algunos mandos a distancia, auriculares, ratones, bombillas inteligentes, altavoces... Si bien la lista puede ser enorme.
+
+### _Wi-Fi_
+
+**_Wi-Fi_** es el rey de los protocolos, puede encontrarse en multitud de dispositivos distintos, y al **poderse conectar directamente con el _router_ de tu casa**, permite evitar los problemas de conectividad que acabamos de comentar con los anteriores protocolos, ofrece más alcance y paquetes de datos más grandes.
+
+El protocolo de red _Wi-Fi_ opera en dos bandas 2.4 y 5 GHz, la primera más lenta y con más distancia, y la segunda más rápida, pero con menos alcance. **Los dispositivos domóticos suelen usar la primera**.
+
+Por contra, y aunque la tendencia es a que esto cambie, se suele hacer complicado encontrar dispositivos que permitan elegir si los usamos en local (con la velocidad y privacidad que esto ofrece), o de manera “remota”, requiriendo el uso del servidor y la aplicación de la marca del dispositivo en la nube, con la facilidad de uso fuera y dentro de casa que esto conlleva, pero, por otro lado, con la **dependencia de _Internet_ y propia marca**. Por ejemplo, la propia marca puede cerrar o simplemente dejar de dar soporte a su producto, apagar servidores, y el dispositivo domótico dejaría de funcionar. En casos menos graves, la empresa podría dejar de actualizar el dispositivo con actualizaciones de seguridad o mejoras.
+
+Otro punto problemático es que tener muchos dispositivos con este protocolo **suele saturar la red _Wi-Fi_ de tu casa o el propio _router_** y con ello, que falle la red local e _Internet_ ya no solo en la parte domótica, si no también cualquier otro dispositivo como tu móvil o tu portátil que también se conectan al _router_ para tener _Internet_.
+
+A parte, **tiene un consumo elevado**, por lo que es complicado ya no solo encontrar dispositivos _Wi-Fi_ que funcionen con pilas o batería, sino además, que funcionen bien, ya que la solución para ahorrar energía suele ser poner los dispositivos a dormir, con lo que cuando realizan una detección o una acción, estos dispositivos tienen que arrancar, volver a conectarse a la red _Wi-Fi_, y recibir o enviar los datos, lo que incrementa mucho el tiempo de reacción.
+
+### _Ethernet_
+
+**_Ethernet_** diríamos que es bastante parecido a _Wi-Fi_, pero funciona por cable, y si bien puede saturar el _router_, es bastante extraño que ocurra, además tiene ventajas añadidas, más velocidad y estabilidad, y según que dispositivos, incluso permiten su alimentación por el propio cable usando la tecnología _POE_, algo que veremos en otro artículo.
+
+Por contra, **es necesario disponer de un cable desde el _router_ hasta el dispositivo que queramos conectar**, lo que complica su instalación.
+
+Unos ejemplos de este protocolo pueden ser cámaras de vigilancia con cable, un ordenador de sobremesa, un portátil, o una _Smart TV_ con conexión a red cableada.
+
+### _Zigbee_
+
+El protocolo **_Zigbee_**, sigue un paradigma parecido a la red _Wi-Fi_, pero le da una pequeña vuelta, usando la misma frecuencia 2.4 GHz, y con un alcance cortito, de unos 10m, **crea una red de mallada entre los dispositivos cercanos conectados entre sí**.
+
+¿Y cómo funciona esta red mallada? Pues básicamente con tres componentes principales, por un lado tenemos **el coordinador** o también llamado _Hub_, que solo hay uno, y es el encargado de gestionar la red mallada, a este pueden conectarse dos tipos de dispositivos distintos, **los enrutadores**, que suelen ser dispositivos como interruptores con cable de corriente, enchufes, bombillas... en general, dispositivos que necesitan alimentación, y que actúan como enrutadores de la red, conectándose a otros enrutadores y con el coordinador, lo que incrementa el alcance de la red disponible; y por otro lado, **los dispositivos finales**, que suelen ser dispositivos como sensores, interruptores sin alimentación... en general, dispositivos a pilas o batería. Estos, se pueden conectar tanto al coordinador, como a los dispositivos enrutadores, pero no entre ellos.
+
+Este tipo de dispositivos a pilas, son posibles gracias al bajo consumo del protocolo _Zigbee_, cosa que con _Wi-Fi_ se hace casi imposible.
+
+La gracia de _Zigbee_ es no saturar la red _Wi-Fi_, creando su propia red, y llegar más lejos y con menos interferencias siempre que vayamos **colocando dispositivos enrutadores que amplíen esta red mallada**.
+
+Además, todos estos dispositivos funcionan en local, y es el coordinador, como _Hub_ que es, el encargado de transformar todas las comunicaciones que ocurren dentro de esta red, a otro protocolo o formato que pueda entenderse con los dispositivos clientes que van a controlar y recoger datos de la domótica como tu teléfono o tu _PC_, que no tienen _Zigbee_.
+
+### _Thread_
+
+El protocolo más nuevo de todos, **_Thread_**, podemos verlo como una evolución de _Zigbee_. Es bastante nuevo, y por ello **apenas hay dispositivos disponibles todavía**, la idea es que los fabricantes vayan creando nuevos dispositivos con este protocolo y dejando de lado poco a poco _Zigbee_.
+
+Con _Thread_, ya no será necesario disponer de un solo coordinador o como se llamarán en este protocolo de red, **_Border Routers_**, si no que ahora los dispositivos enrutadores, y los dispositivos finales podrán conectarse a más de un _Border Router_, intentando que no exista el cuello de botella que teníamos en _Zigbee_, al tener un único punto del que depende toda la red.
+
+Además, desde la alianza de marcas _Thread Group_ se está fomentando que cualquier dispositivo cliente como tu móvil, un altavoz inteligente o los _Mac Mini_ incluyan este protocolo para eliminar la necesidad de tener ese “_Hub”_ que transforme los datos de la red _Thread_ a otro protocolo, cosa que ocurre como hemos visto en protocolos anteriores, creando una red mucho más compatible.
+
+### _Z-Wave_
+
+Por último, aunque no menos importante, **_Z-Wave_**, cuyo funcionamiento es muy parecido a _Zigbee_, pero con ligeras diferencias, funciona sobre las frecuencias 915 MHz y 908.42 MHz, que son frecuencias más libres que las anteriores, por tanto, **más complicado llegar a saturar el canal**, cosa que ocurre entre Wi-Fi, _Zigbee_ y Thread. Y aunque con muchas comillas, se supone que en _Zigbee_ se pueden llegar a conectar hasta 65.000 dispositivos con saltos ilimitados dentro de una misma red mallada, en el caso de _Z-Wave_, la limitación es de apenas 232 dispositivos y 4 saltos, con lo que estamos mucho más limitados en este aspecto.
+
+Un “salto” se refiere al proceso de pasar información de un dispositivo a otro dentro de la red. **Cada vez que la información se transmite de un dispositivo a otro, se considera un “salto”**.
+
+Por ejemplo, si tienes un sensor de puerta que necesita enviar información al coordinador o _Hub_, pero no está al alcance directo del _Hub_, la información puede “saltar” a través de otros dispositivos en la red que estén más cerca del _Hub_. Cada uno de estos dispositivos intermedios que ayudan a transmitir la información se considera un “salto”.
+
+Un punto a favor, con una pequeña pega, es _Z-Wave_, al igual que _Wi-Fi_, _Zigbee_ o _Thread_, requieren pasar una certificación a los dispositivos para poder sacarlos al mercado, pero **en el caso de _Z-Wave_, esta certificación es mucho más costosa y dura**, lo que hace que los dispositivos que salen al mercado salgan con muy buena calidad y robustez, pero también hace que este tipo de dispositivos sean bastante más caros de lo que podemos encontrar en otros protocolos.
+
+## _Hubs_
+
+Llegados a este punto, después de haber explicado si no todos, la mayoría de los protocolos de las capas física y de red más conocidos, es probable que hayas leído varias veces el término **_Hub_**. Este término juega un papel crítico en la domótica, y es el momento perfecto para verlo.
+
+**La mayoría de los dispositivos domóticos tienden a buscar el protocolo _IP_ (_Internet Protocol_)**, que es parte de la familia de protocolos de red _TCP/IP_. Estos protocolos son un conjunto de reglas que permiten enviar y recibir paquetes de datos a través de _Internet_. **Los dispositivos pueden usar este protocolo directamente, o pueden hacerlo mediante un _Hub_ intermedio**.
+
+El uso de un _Hub_ se debe a que facilita el control de los dispositivos domóticos. Esto es así porque **el protocolo _IP_ es el protocolo que todo el mundo tiene en su casa**, y es el protocolo que la mayoría de los dispositivos clientes, como tu _PC_ o tu móvil utilizan a través de _Wi-Fi_ o _Ethernet_.
+
+Además, al estar conectados al mismo _Wi-Fi_ o por cable _Ethernet_ al _router_ con entrada y salida a _Internet_, se ofrece la posibilidad de usar estos dispositivos domóticos desde fuera de casa. En muchos casos, estos dispositivos, una vez conectados a _Internet_ a través del _router_, enviarán y recibirán datos a los servidores de la marca. De esta manera, tú, con tu móvil en la calle y conectado a la red de datos y, por tanto, a _Internet_, podrás conectarte usando la aplicación que ofrece la marca del dispositivo domótico al propio dispositivo que estará dentro de tu casa.
+
+De ser necesario, **hay diferentes formatos de _Hub_**, tanto cableados usando _Ethernet_ o _USB_, como por _Wi-Fi_, y cada _Hub_ tendrá disponible compatibilidad con una o varias marcas y con uno o varios protocolos de los que ya hemos visto. Entraremos en más detalle en un futuro próximo.
+
+## Conclusión
+
+Con este último punto damos por explorados los fundamentos de los protocolos de red utilizados en la domótica, incluyendo _Zigbee_, _Thread_, _WiFi_, infrarrojos, radiofrecuencia, _Ethernet_ y _Z-Wave_. También hemos visto el papel crucial que juegan los _Hubs_ en la creación y gestión de estas redes.
+
+Por el momento, lo dejamos aquí, sé que ha sido un artículo un poco denso, y si has llegado hasta aquí, mi enhorabuena y agradecimiento, comparte y no olvides visitarnos en [**_YouTube_**](https://youtube.com/@domoticarte) o [**_Telegram_**](https://t.me/domoticarte). ¡Nos vemos en el siguiente artículo!

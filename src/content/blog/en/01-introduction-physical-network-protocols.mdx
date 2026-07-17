@@ -1,0 +1,140 @@
+---
+title: 'Discover Home Automation: Zigbee, Thread, WiFi and More'
+description: 'We will explore the fundamentals of network protocols used in home automation and the crucial role Hubs play in creating and managing these networks.'
+publishedAt: 2024-05-17
+slug: introduction-physical-network-protocols
+image: '../../../assets/blog/i18n-in-astro-rocket.svg'
+toc: true
+featured: false
+locale: en
+uid: '01-introduction-physical-network-protocols'
+categories:
+  - Fundamentals
+  - Networks
+tags:
+  - Zigbee
+  - Wi-Fi
+  - Thread
+  - Bluetooth
+  - Z-Wave
+  - Ethernet
+  - Radiofrequency
+  - Infrared
+  - Fundamentals
+  - Networks
+  - Protocols
+---
+
+I have been helping in different home automation groups for several years, those who know me will know that I try to help whenever I can, and during all this time, I have noticed one thing, although this whole world of **home automation is becoming more accessible**, the beginnings are complicated, it has a certain learning curve and it is easy to end up mixing concepts.
+
+And that is why I have proposed to create a series of articles that serve as an introduction to this whole world, both for all those who are starting, as well as for those of us who have been around longer and may still have small doubts.
+
+We are going to go step by step, starting from the base, from the most basic, **the physical and network layers**.
+
+> And I know what you’re thinking, we’re starting strong, but you can be calm, you’ll see how much of this article sounds familiar to you.
+
+## The network protocols
+
+Imagine that the devices on your network are like cities. For these cities to be able to exchange information (or “goods”), they need a network of roads. These roads are the network protocols.
+
+Just like roads, protocols can be of different types. Some are like high-speed highways (for example, _Wi-Fi_ or _Ethernet_), which allow for a quick exchange of large amounts of data, but may need more energy (or “fuel”). Others can be like paths (for example, _Zigbee_ or _Z-Wave_), which are slower and have less capacity, but consume less energy and can reach places where highways cannot.
+
+In addition, just as we can transport goods with a plane, on roads that we know are there, but we cannot see, we can also do it with information, the “cables” in a network can be invisible, transmitting data through the air.
+
+Let’s look at the most typical ones with some examples:
+
+### Radiofrequency (_RF_)
+
+The **Radiofrequency** or **_RF_** is the typical protocol for garage remotes or alarms.
+
+A transmitting device sends small packets with codes through radio signals in all directions through the air, which will be received by a receiving device if it is within range, so communication is not bidirectional.
+
+This leads to a quite serious problem, **you will not be able to know the status of the receiving device**, for example, if we have a garage door controlled with a remote, even if this remote can have a single button to open and close, or two buttons, one for each function, when pressing the remote, if we are not observing the door, you will not be able to know if the door is open or not, or its exact position. The only solution is to add extra sensors to the door, or wait a prudent time that can assure us if it is open or closed. And, even so, it could get complicated, as there are remotes that allow to stop the door in the middle of an action.
+
+They are devices used locally and as we will see at the end, if you want to use a mobile, _Tablet_, _PC_, or even a smart speaker to act as a remote, and as these devices do not have a radiofrequency emitter, you will need a Hub that acts as a remote and transforms the signal for example to _Wi-Fi_, which is available in these devices.
+
+As a note, be careful with radiofrequency devices, because even trying to clone the signal of a remote, for example, with a home automation device with a radiofrequency emitter that works by _Wi-Fi_, many times **the codes of the signal emitted by the remote change for security with each press**, and it becomes, therefore, impossible to copy.
+
+### Infrared (_IR_)
+
+The **Infrared** or **IR** signal, used in air conditioning remotes, _Smart TVs_, or even some bulbs, for example, we are in a case similar to radiofrequency, only that, with infrared, **the signal is emitted directionally**, this means that both devices have to see each other to be able to send and receive data. This also makes the range very limited, about 5 meters.
+
+Similarly, although some old mobiles and laptops have an emitter and even an infrared receiver, **it is something that has become obsolete**, as none of these devices usually bring compatibility with infrared. Again, we will need an intermediate device for its control from mobile, voice assistants and other home automation devices.
+
+### _Bluetooth_ (_BT_)
+
+A fairly well-known network protocol, **_Bluetooth_**, transmits small data packets through the air in all directions between two devices (like the previous ones), **with bidirectional communication**, it has a range of about 30m under ideal conditions, and **a very small consumption** in its latest versions. With these characteristics, and although it may seem like an ideal protocol for home automation, it has several problems.
+
+On the one hand, it is little used because its operation is local, you need another device with _Bluetooth_ that acts as a client to control and read the information from the home automation device, such as a mobile or a Hub. **You need a previous pairing**, which complicates the configuration compared to the previous two protocols.
+
+**A single client does not support many _Bluetooth_ devices connected at the same time**, so we will have to have several client devices as soon as we have enough _Bluetooth_ sensors at home.
+
+To give examples of devices that use _Bluetooth_, we have different battery-powered sensors, some remote controls, headphones, mice, smart bulbs, speakers… Although the list can be huge.
+
+### _Wi-Fi_
+
+**_Wi-Fi_** is the king of protocols, it can be found in a multitude of different devices, and by **being able to connect directly with the _router_ in your home**, it allows to avoid the connectivity problems that we just discussed with the previous protocols, it offers more range and larger data packets.
+
+The _Wi-Fi_ network protocol operates on two bands 2.4 and 5 GHz, the first slower and with more distance, and the second faster, but with less range. **Home automation devices usually use the first one**.
+
+On the other hand, and although the trend is for this to change, it is usually difficult to find devices that allow you to choose whether we use them locally (with the speed and privacy that this offers), or remotely, requiring the use of the server and the application of the device brand in the cloud, with the ease of use outside and inside the house that this entails, but, on the other hand, with the **dependence on the _Internet_ and own brand**. For example, the brand itself can close or simply stop supporting its product, turn off servers, and the home automation device would stop working. In less serious cases, the company could stop updating the device with security updates or improvements.
+
+Another problematic point is that having many devices with this protocol **usually saturates the _Wi-Fi_ network of your house or the _router_ itself** and with it, the local network and the Internet fail not only in the home automation part, but also any other device like your mobile or your laptop that also connect to the _router_ to have Internet.
+
+Apart from that, **it has a high consumption**, so it is complicated not only to find _Wi-Fi_ devices that work with batteries, but also, that work well, since the solution to save energy is usually to put the devices to sleep, so when they perform a detection or an action, these devices have to start, reconnect to the _Wi-Fi_ network, and receive or send the data, which greatly increases the reaction time.
+
+### _Ethernet_
+
+**_Ethernet_** we would say is quite similar to _Wi-Fi_, but it works by cable, and although it can saturate the _router_, it is quite strange that it happens, it also has added advantages, more speed and stability, and depending on the devices, they even allow their power supply through the cable itself using _POE_ technology, something we will see in another article.
+
+On the other hand, **it is necessary to have a cable from the _router_ to the device we want to connect**, which complicates its installation.
+
+Some examples of this protocol can be wired surveillance cameras, a desktop computer, a laptop, or a _Smart TV_ with wired network connection.
+
+### _Zigbee_
+
+The **_Zigbee_** protocol, follows a paradigm similar to the _Wi-Fi_ network, but gives it a little twist, using the same 2.4 GHz frequency, and with a short range, about 10m, **it creates a mesh network among the nearby devices connected to each other**.
+
+And how does this mesh network work? Well basically with three main components, on one hand we have **the coordinator** or also called _Hub_, of which there is only one, and it is in charge of managing the mesh network, to this can connect two different types of devices, **the routers**, which are usually devices like switches with power cable, plugs, bulbs… in general, devices that need power, and that act as routers of the network, connecting to other routers and with the coordinator, which increases the range of the network available; and on the other hand, **the end devices**, which are usually devices like sensors, switches without power… in general, battery or battery powered devices. These, can connect both to the coordinator, and to the router devices, but not to each other.
+
+This type of battery-powered devices, are possible thanks to the low consumption of the Zigbee protocol, something that with Wi-Fi is almost impossible.
+
+The grace of _Zigbee_ is not to saturate the _Wi-Fi_ network, creating its own network, and reach further and with less interference as long as we go **placing router devices that expand this mesh network**.
+
+In addition, all these devices work locally, and it is the coordinator, as a _Hub_ that it is, the one in charge of transforming all the communications that occur within this network, to another protocol or format that can be understood with the client devices that are going to control and collect data from home automation like your phone or your _PC_, which do not have _Zigbee_.
+
+### _Thread_
+
+The newest protocol of all, **_Thread_**, we can see it as an evolution of Zigbee. It is quite new, and therefore **there are hardly any devices available yet**, the idea is that manufacturers will create new devices with this protocol and gradually leave _Zigbee_ aside.
+
+With _Thread_, it will no longer be necessary to have a single coordinator or as they will be called in this network protocol, Border Routers, but now the router devices, and the end devices will be able to connect to more than one Border Router, trying to avoid the bottleneck we had in _Zigbee_, by having a single point on which the entire network depends.
+
+In addition, from the _Thread Group_ brand alliance, it is being promoted that any client device such as your mobile, a smart speaker or the _Mac Mini_ include this protocol to eliminate the need to have that _“Hub”_ that transforms the data from the _Thread_ network to another protocol, something that happens as we have seen in previous protocols, creating a much more compatible network.
+
+### _Z-Wave_
+
+Last but not least, **_Z-Wave_**, whose operation is very similar to _Zigbee_, but with slight differences, it operates on the frequencies 915 MHz and 908.42 MHz, which are more free frequencies than the previous ones, therefore, **more difficult to saturate the channel**, something that happens between _Wi-Fi_, _Zigbee_ and _Thread_. And although with many quotes, it is supposed that in _Zigbee_ up to 65,000 devices can be connected with unlimited jumps within the same mesh network, in the case of _Z-Wave_, the limitation is just 232 devices and 4 jumps, so we are much more limited in this aspect.
+
+A “jump” refers to the process of passing information from one device to another within the network. **Each time information is transmitted from one device to another, it is considered a “jump”**.
+
+For example, if you have a door sensor that needs to send information to the coordinator or _Hub_, but it is not within direct reach of the _Hub_, the information can “jump” through other devices in the network that are closer to the _Hub_. Each of these intermediate devices that help transmit the information is considered a “jump”.
+
+A point in favor, with a small drawback, is _Z-Wave_, like _Wi-Fi_, Zigbee or _Thread_, they require certification for the devices to be able to bring them to market, but **in the case of _Z-Wave_, this certification is much more costly and hard**, which makes the devices that come out on the market come out with very good quality and robustness, but it also makes these types of devices quite more expensive than what we can find in other protocols.
+
+## _Hubs_
+
+At this point, after having explained if not all, most of the protocols of the physical and network layers that are well known, you have probably read the term _Hub_ several times. This term plays a critical role in home automation, and it is the perfect time to see it.
+
+**Most home automation devices tend to look for the _IP_ (_Internet Protocol_)**, which is part of the _TCP/IP_ network protocol family. These protocols are a set of rules that allow sending and receiving data packets through Internet. **Devices can use this protocol directly, or they can do it through an intermediate _Hub_**.
+
+The use of a _Hub_ is due to the fact that it facilitates the control of home automation devices. This is because **the _IP_ protocol is the protocol that everyone has in their home**, and it is the protocol that most client devices, such as your PC or your mobile, use through _Wi-Fi_ or _Ethernet_.
+
+In addition, being connected to the same _Wi-Fi_ or by _Ethernet_ cable to the _router_ with input and output to Internet, it offers the possibility of using these home automation devices from outside the home. In many cases, these devices, once connected to Internet through the _router_, will send and receive data to the brand’s servers. In this way, you, with your mobile on the street and connected to the data network and, therefore, to Internet, will be able to connect using the application offered by the brand of the home automation device to the device itself that will be inside your house.
+
+If necessary, **there are different formats of _Hub_**, both wired using _Ethernet_ or _USB_, as well as by _Wi-Fi_, and each _Hub_ will have compatibility available with one or several brands and with one or several protocols that we have already seen. We will go into more detail in the near future.
+
+## Conclusion
+
+With this last point, we have explored the fundamentals of the network protocols used in home automation, including _Zigbee_, _Thread_, _WiFi_, Infrared, Radiofrequency, _Ethernet_ and _Z-Wave_. We have also seen the crucial role that _Hubs_ play in the creation and management of these networks.
+
+For now, we leave it here, I know it has been a bit of a dense article, and if you have made it this far, congratulations and thank you. Remember to share. See you in the next article!
