@@ -1,0 +1,629 @@
+{
+  "nav": {
+    "skipToContent": "Saltar al contenido",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "selectLanguage": "Seleccionar idioma",
+    "currentLanguage": "Idioma actual",
+    "mainNav": "Navegación principal",
+    "mobileNav": "Navegación móvil",
+    "toggleMenu": "Alternar menú",
+    "sectionNavigate": "Navegar",
+    "sectionTheme": "Tema",
+    "sectionLanguage": "Idioma",
+    "sectionConnect": "Conectar",
+    "items": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "projects": "Proyectos",
+      "blog": "Blog",
+      "about": "Acerca de",
+      "contact": "Contacto"
+    }
+  },
+  "common": {
+    "readMore": "Leer más",
+    "loading": "Cargando…",
+    "backToTop": "Volver arriba",
+    "search": "Buscar",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "home": "Inicio"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Últimos artículos y actualizaciones",
+    "readingTime": "{minutes} min de lectura",
+    "publishedOn": "Publicado el {date}",
+    "updatedOn": "Actualizado el {date}",
+    "writtenBy": "Escrito por {author}",
+    "tagsLabel": "Etiquetas",
+    "featured": "Destacado",
+    "draft": "Borrador",
+    "noPostsFound": "No se encontraron artículos.",
+    "tableOfContents": "Tabla de contenidos",
+    "shareThisPost": "Compartir este artículo",
+    "relatedPosts": "Artículos relacionados",
+    "share": "Compartir:",
+    "shareOn": "Compartir en {platform}",
+    "copyLink": "Copiar enlace",
+    "metaTitle": "Blog",
+    "metaDescription": "El blog de Astro Rocket: guías prácticas para configurar, personalizar y construir con el tema.",
+    "heroBadge": "Todos los artículos",
+    "heroDescription": "Todo lo que necesitas saber sobre Astro\u00a0Rocket, explicado en guías prácticas.",
+    "allPosts": "Todos los artículos",
+    "noPosts": "No se encontraron artículos",
+    "pageMetaTitle": "Blog — Página {page}",
+    "pageMetaDescription": "Página {page} de {total} — guías prácticas para configurar, personalizar y construir con Astro Rocket.",
+    "pageBadge": "Página {page} de {total}",
+    "newestPosts": "Artículos más recientes",
+    "tagMetaTitle": "#{tag} — Blog",
+    "tagMetaDescription": "Artículos etiquetados con \"{tag}\".",
+    "tagBadge": "Etiqueta",
+    "tagCountOne": "{count} artículo etiquetado con \"{tag}\".",
+    "tagCountOther": "{count} artículos etiquetados con \"{tag}\".",
+    "tagEmpty": "No se encontraron artículos para esta etiqueta.",
+    "tagBackToAll": "Volver a todos los artículos",
+    "onThisPage": "En esta página",
+    "backToBlog": "Volver al Blog",
+    "updated": "Actualizado",
+    "followAlong": "Síguenos",
+    "followAlongLead": "Mantente al tanto — nuevos artículos, opiniones y actualizaciones.",
+    "rssFeed": "Feed RSS",
+    "emailLabel": "Email"
+  },
+  "comments": {
+    "title": "Comentarios",
+    "loadError": "Error al cargar los comentarios. Por favor, actualiza e inténtalo de nuevo.",
+    "requiresJs": "Los comentarios requieren JavaScript para cargarse."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Cosas que he construido",
+    "viewProject": "Ver proyecto",
+    "viewSource": "Ver código fuente",
+    "noProjectsFound": "No se encontraron proyectos.",
+    "metaTitle": "Proyectos",
+    "metaDescription": "Trabajo seleccionado — sitios web, herramientas y proyectos de código abierto construidos por Astro Rocket.",
+    "heroBadge": "Trabajo seleccionado",
+    "heroDescription": "Trabajo del que estoy más orgulloso.",
+    "allProjects": "Todos los proyectos",
+    "pageMetaTitle": "Proyectos — Página {page}",
+    "pageMetaDescription": "Página {page} de {total} — trabajo seleccionado, herramientas y proyectos de código abierto de Astro Rocket.",
+    "pageBadge": "Página {page} de {total}",
+    "tagMetaTitle": "#{tag} — Proyectos",
+    "tagMetaDescription": "Proyectos etiquetados con \"{tag}\".",
+    "tagBadge": "Etiqueta",
+    "tagCountOne": "{count} proyecto etiquetado con \"{tag}\".",
+    "tagCountOther": "{count} proyectos etiquetados con \"{tag}\".",
+    "tagEmpty": "No se encontraron proyectos para esta etiqueta.",
+    "tagBackToAll": "Volver a todos los proyectos",
+    "backToProjects": "Volver a Proyectos",
+    "moreProjects": "Más proyectos",
+    "ctaBadge": "Hablemos",
+    "ctaHeading": "¿Quieres algo como esto?",
+    "ctaLead": "Construyo con el mismo cuidado y destreza que ves aquí. Si tienes un proyecto, veamos qué podemos crear juntos.",
+    "ctaPrimary": "Iniciar un proyecto",
+    "ctaSecondary": "Más sobre mí",
+    "closingHeading": "¿Tienes un proyecto en mente?",
+    "closingLead": "Ya sea algo nuevo o algo que necesite una perspectiva fresca, me encantaría saberlo."
+  },
+  "pagination": {
+    "page": "Página {current} de {total}",
+    "label": "Paginación",
+    "previousPage": "Página anterior",
+    "nextPage": "Página siguiente"
+  },
+  "errors": {
+    "pageNotFound": "Página no encontrada",
+    "pageNotFoundMessage": "La página que buscas no existe o se ha movido.",
+    "goHome": "Ir a la página principal",
+    "metaTitle": "Página no encontrada",
+    "metaDescription": "Esta página se ha movido, eliminado o nunca existió.",
+    "badge": "404 — página no encontrada",
+    "titleLead": "Página no",
+    "titleHighlight": "encontrada.",
+    "description": "Esta página se ha movido, eliminado o nunca existió. Volvamos a ponerte en el camino correcto.",
+    "backHome": "Volver a la página principal",
+    "browseBlog": "Explorar el blog",
+    "tryInstead": "Prueba una de estas en su lugar",
+    "projectsDesc": "Trabajo seleccionado y estudios de caso.",
+    "blogDesc": "Notas sobre diseño, código y artesanía.",
+    "contactTitle": "Contacto",
+    "contactDesc": "Inicia una conversación sobre tu proyecto."
+  },
+  "newsletter": {
+    "heading": "Suscríbete a la newsletter",
+    "description": "Recibe las últimas publicaciones en tu bandeja de entrada.",
+    "emailPlaceholder": "Introduce tu Email",
+    "subscribe": "Suscribirse",
+    "subscribing": "Suscribiéndote…",
+    "success": "¡Gracias por suscribirte!",
+    "genericError": "Algo salió mal",
+    "error": "La suscripción falló. Por favor, inténtalo de nuevo."
+  },
+  "contact": {
+    "heading": "Ponte en contacto",
+    "name": "Nombre",
+    "email": "Email",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando…",
+    "success": "¡Mensaje enviado con éxito!",
+    "genericError": "Algo salió mal",
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  },
+  "theme": {
+    "selectColourTheme": "Selecciona el tema de color",
+    "colourTheme": "Tema de color",
+    "colourMode": "Modo de color",
+    "modeTrigger": "Tema: {mode}. Haz clic para cambiar.",
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "currentlyLight": "Actualmente claro",
+    "currentlyDark": "Actualmente oscuro",
+    "swatchLabel": "Tema {name}"
+  },
+  "search": {
+    "placeholder": "Buscar artículos, proyectos y páginas…",
+    "inputLabel": "Consulta de búsqueda",
+    "resultsLabel": "Resultados de búsqueda",
+    "hint": "Empieza a escribir para buscar en el sitio.",
+    "noResults": "No hay resultados para “{query}”",
+    "unavailable": "El índice de búsqueda se genera en el momento de la compilación y no está disponible en <code class=\"rounded bg-secondary px-1.5 py-0.5 text-xs\">astro dev</code>.<br />Ejecuta <code class=\"rounded bg-secondary px-1.5 py-0.5 text-xs\">pnpm build &amp;&amp; pnpm preview</code> para probarlo localmente."
+  },
+  "video": {
+    "playLabel": "Reproducir video: {title}",
+    "watchOn": "Ver en YouTube"
+  },
+  "footer": {
+    "copyright": "© {year} {siteName}",
+    "credit": "Tema de <a href=\"https://hansmartens.dev\" class=\"transition-colors hover:text-foreground\" target=\"_blank\" rel=\"noopener noreferrer\">Hans Martens Dev</a>",
+    "builtWith": "Creado con Astro Rocket",
+    "followOn": "Síguenos en {platform}"
+  },
+  "pages": {
+    "about": {
+      "meta": {
+        "title": "Sobre Astro Rocket — Tema gratis y open source para Astro 7",
+        "description": "Qué es Astro Rocket y cómo está hecho: un tema inicial gratuito y rapidísimo para Astro 7, con 57 componentes diseñados, 12 temas de color, i18n integrado y modo oscuro."
+      },
+      "hero": {
+        "badge": "Sobre Astro Rocket",
+        "titleLead": "Astro Rocket —",
+        "typingWords": [
+          "Rapidísimo",
+          "Tema inicial",
+          "57 componentes",
+          "12 temas",
+          "Modo oscuro",
+          "i18n integrado"
+        ],
+        "typingWordsMobile": [
+          "Rapidísimo",
+          "Tema inicial",
+          "12 temas",
+          "Modo oscuro",
+          "i18n integrado"
+        ],
+        "description": "Un tema inicial gratuito y de código abierto para Astro 7, listo para construir lo que quieras."
+      },
+      "whatYouGet": {
+        "badge": "Qué incluye",
+        "heading": "Todo lo que necesita una web real",
+        "lead": "La librería de componentes es el corazón del tema. Todo lo demás que necesita una web profesional ya viene incluido.",
+        "items": [
+          {
+            "icon": "component",
+            "title": "57 componentes diseñados",
+            "description": "Desde botones hasta secciones hero: tipados, accesibles, consistentes y documentados en una demo en vivo."
+          },
+          {
+            "icon": "layout",
+            "title": "Páginas base para empezar",
+            "description": "Inicio, sobre mí, servicios, contacto, blog, proyectos y 404; totalmente diseñadas y responsive, listas para personalizarlas."
+          },
+          {
+            "icon": "palette",
+            "title": "12 temas de color",
+            "description": "Cambia toda la paleta del sitio al instante desde la cabecera. Incluye modo claro y oscuro."
+          },
+          {
+            "icon": "book-open",
+            "title": "Blog con tabla de contenidos",
+            "description": "MDX, RSS, etiquetas, comentarios, artículos relacionados y tabla de contenidos con scroll-spy. Escribe y publica."
+          },
+          {
+            "icon": "image",
+            "title": "Proyectos con galerías",
+            "description": "Una sección de portfolio con galerías de imágenes, carruseles de vídeo, etiquetas y su propia tabla de contenidos."
+          },
+          {
+            "icon": "globe",
+            "title": "i18n completo y opcional",
+            "description": "Blog, proyectos, navegación, formularios y 404: todo localizado por idioma. Desactivado por defecto y sin coste si no se usa."
+          },
+          {
+            "icon": "search",
+            "title": "Buscador del sitio",
+            "description": "Búsqueda estática rápida (Pagefind) con modal de ⌘K: cero JavaScript hasta que se abre."
+          },
+          {
+            "icon": "trending-up",
+            "title": "Kit SEO",
+            "description": "Metadatos, sitemaps, datos estructurados e imágenes OG, listos y bien configurados desde el inicio."
+          },
+          {
+            "icon": "server",
+            "title": "Formularios y despliegue",
+            "description": "Formularios de contacto y boletín protegidos contra spam, y despliegues con un clic en Vercel, Netlify o Cloudflare."
+          }
+        ]
+      },
+      "principles": {
+        "badge": "Principios de diseño",
+        "heading": "Construido con intención",
+        "lead": "Cada decisión en Astro Rocket, desde la estructura de componentes hasta la configuración por defecto, se guía por los mismos tres principios.",
+        "items": [
+          {
+            "icon": "zap",
+            "title": "Rendimiento primero",
+            "description": "Cero JavaScript por defecto. Cada componente está optimizado para velocidad, Core Web Vitals y salida ligera."
+          },
+          {
+            "icon": "award",
+            "title": "Experiencia de desarrollo",
+            "description": "TypeScript en todo el proyecto, valores por defecto sensatos y una librería de componentes lista para usar en cualquier página."
+          },
+          {
+            "icon": "rocket",
+            "title": "Moderno desde la base",
+            "description": "Astro 7, Tailwind CSS 4 y una arquitectura limpia, fácil de ampliar y mantener."
+          }
+        ]
+      },
+      "stack": {
+        "badge": "Herramientas y tecnología",
+        "title": "El stack",
+        "description": "Las tecnologías que impulsan Astro Rocket, elegidas por su rendimiento, gran experiencia de desarrollo y fiabilidad a largo plazo."
+      },
+      "faq": {
+        "badge": "Conviene saber",
+        "heading": "Preguntas frecuentes",
+        "lead": "Todo lo que necesitas saber antes de empezar.",
+        "cards": [
+          {
+            "icon": "rocket",
+            "title": "Sobre Astro",
+            "items": [
+              {
+                "question": "¿Qué es Astro?",
+                "answer": "Astro es un framework web moderno pensado para sitios orientados a contenido. Envía cero JavaScript por defecto: solo lo que la página realmente necesita. El resultado son cargas rápidas, excelentes Core Web Vitals y un código ligero y mantenible."
+              },
+              {
+                "question": "¿Por qué construir con Astro?",
+                "answer": "Astro es la herramienta adecuada para webs con mucho contenido: JavaScript mínimo, HTML limpio, gran SEO desde el inicio y una experiencia de desarrollo que no estorba. Es ligero, con propósito y hecho para durar."
+              },
+              {
+                "question": "¿Qué puedo construir con Astro Rocket?",
+                "answer": "Portfolios, webs corporativas, landings de marketing, blogs, documentación... cualquier proyecto orientado a contenido. Astro Rocket te da la estructura, los componentes y los valores por defecto para arrancar rápido."
+              },
+              {
+                "question": "¿Aparece Astro Rocket en el directorio oficial de temas de Astro?",
+                "answer": "Sí. <a href=\"https://astro.build/themes/details/astro-rocket/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">Astro Rocket</a> está listado en el directorio oficial de temas de Astro como un tema gratuito y listo para producción."
+              },
+              {
+                "question": "¿Astro Rocket se mantendrá al día con las nuevas versiones de Astro?",
+                "answer": "Sí. Astro Rocket se mantiene activamente y se actualiza para seguir las nuevas versiones de Astro. Puedes seguir las novedades en el blog o vigilando el repositorio de GitHub."
+              }
+            ]
+          },
+          {
+            "icon": "code-2",
+            "title": "Uso del tema",
+            "items": [
+              {
+                "question": "¿Se puede usar gratis?",
+                "answer": "Sí, completamente gratis. Astro Rocket tiene licencia MIT: úsalo en proyectos personales y comerciales, sin necesidad de atribución."
+              },
+              {
+                "question": "¿Cómo cambio de tema?",
+                "answer": "Cambiando una sola línea en tu configuración. Astro Rocket incluye 12 temas de color creados a mano que puedes cambiar al instante sin tocar CSS."
+              },
+              {
+                "question": "¿Es compatible con TypeScript?",
+                "answer": "Sí. TypeScript se utiliza en todo el proyecto. Todos los componentes, configuraciones y utilidades están completamente tipados."
+              },
+              {
+                "question": "¿Cómo añado mi propio idioma para i18n?",
+                "answer": "El i18n de Astro Rocket se configura por archivo. Añade tu locale al archivo de configuración de i18n, crea su archivo de traducción y el enrutado y la interfaz se adaptarán automáticamente."
+              },
+              {
+                "question": "¿Dónde reporto errores o propongo mejoras?",
+                "answer": "Abre una issue o inicia una discusión en el <a href=\"https://github.com/hansmartensdev/astro-rocket\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">repositorio de GitHub</a>. Las contribuciones y el feedback son siempre bienvenidos."
+              }
+            ]
+          }
+        ]
+      },
+      "openSource": {
+        "badge": "Open source",
+        "heading": "Construido en abierto",
+        "description": "Astro Rocket es gratis, open source y con licencia MIT. Explora el código, abre issues, envía PRs o clónalo y construye algo genial.",
+        "button": "Ver en GitHub",
+        "cards": [
+          {
+            "title": "Creado por Hans Martens Dev",
+            "text": "Astro Rocket fue diseñado y desarrollado por <a href=\"https://hansmartens.dev\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">Hans Martens Dev</a>, un desarrollador freelance especializado en Astro que lo usa como base para proyectos de clientes."
+          },
+          {
+            "title": "Licencia MIT",
+            "text": "Uso gratuito en proyectos personales y comerciales. No requiere atribución, aunque una estrella en GitHub siempre se agradece."
+          },
+          {
+            "title": "Mantenimiento activo",
+            "text": "El tema se mantiene al día con las nuevas versiones de Astro y mejora regularmente a partir del feedback de la comunidad."
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Empieza ya",
+        "heading": "¿Listo para construir?",
+        "description": "Clona Astro Rocket, elige un tema y lanza tu próximo proyecto en minutos.",
+        "button": "Comenzar"
+      }
+    },
+    "services": {
+      "meta": {
+        "title": "Servicios — Diseño web, desarrollo y rendimiento",
+        "description": "Tres servicios clave para webs modernas: diseño cuidado, desarrollo limpio con Astro y rendimiento/SEO medibles."
+      },
+      "includedLabel": "Qué incluye",
+      "hero": {
+        "badge": "Servicios",
+        "titleLead": "Lo que ofrezco —",
+        "titleHighlight": "diseñado, desarrollado y optimizado.",
+        "description": "Tres servicios clave, un mismo estándar de calidad. Del primer wireframe a la puntuación final de Lighthouse, cada proyecto recibe la misma atención al detalle.",
+        "jumpLabels": [
+          "Diseño web",
+          "Desarrollo",
+          "Rendimiento"
+        ]
+      },
+      "design": {
+        "badge": "Diseño",
+        "heading": "Diseño web",
+        "paragraphs": [
+          "Un buen diseño empieza por las personas que lo van a usar. Diseño los layouts en torno a tu contenido y a tu audiencia: tipografía, espaciado y color elegidos para aportar claridad, no por novedad.",
+          "Cada pantalla cuenta, desde un monitor grande hasta un móvil. Y los modos claro y oscuro se plantean desde el primer día."
+        ],
+        "included": [
+          {
+            "lead": "Diseño alrededor de tu contenido",
+            "text": "layouts creados para lo que quieres contar, no encajados a la fuerza en una plantilla."
+          },
+          {
+            "lead": "Una web para cada pantalla",
+            "text": "móvil, tablet, escritorio y ultrawide, con una adaptación pensada al detalle."
+          },
+          {
+            "lead": "Modo claro y modo oscuro",
+            "text": "un mismo diseño, dos ambientes, ambos con el mismo nivel de acabado."
+          },
+          {
+            "lead": "Jerarquía tipográfica clara",
+            "text": "legible desde el título de página hasta el pie de foto."
+          },
+          {
+            "lead": "Movimiento con propósito",
+            "text": "interacciones que guían, no distraen, y respetan la preferencia de movimiento reducido."
+          }
+        ],
+        "ctaLabel": "Hablar de un proyecto de diseño"
+      },
+      "development": {
+        "badge": "Desarrollo",
+        "heading": "Desarrollo web",
+        "paragraphs": [
+          "Desarrollo con Astro porque envía solo lo necesario: HTML limpio, JavaScript mínimo y páginas que se sienten instantáneas.",
+          "La arquitectura está pensada para que se pueda mantener después: contenido tipado, límites claros entre componentes y un pipeline de despliegue que funciona siempre igual."
+        ],
+        "included": [
+          {
+            "lead": "Stack moderno con Astro + Tailwind",
+            "text": "JavaScript mínimo y HTML limpio y legible."
+          },
+          {
+            "lead": "Colecciones de contenido tipadas",
+            "text": "si el contenido falla, se rompe la build antes de llegar a tus visitantes."
+          },
+          {
+            "lead": "Pipeline de despliegue",
+            "text": "builds de preview para cada cambio en Netlify, Vercel o Cloudflare."
+          },
+          {
+            "lead": "Formularios que funcionan",
+            "text": "protegidos, adaptados al RGPD y enviados directamente a tu bandeja o CRM."
+          },
+          {
+            "lead": "Entrega clara",
+            "text": "el código, los accesos y un README que de verdad explica todo."
+          }
+        ],
+        "ctaLabel": "Ver proyectos recientes"
+      },
+      "performance": {
+        "badge": "Rendimiento",
+        "heading": "Rendimiento web",
+        "paragraphs": [
+          "La velocidad y la visibilidad en buscadores son requisitos desde el primer commit, no un retoque final. Cada segundo extra cuesta atención, posicionamiento y confianza.",
+          "Trabajo con objetivos medibles: Core Web Vitals, SEO técnico y accesibilidad optimizados y verificados antes del lanzamiento."
+        ],
+        "included": [
+          {
+            "lead": "Core Web Vitals en verde",
+            "text": "LCP, INP y CLS dentro de los umbrales de Google."
+          },
+          {
+            "lead": "Pipeline de imágenes rápido",
+            "text": "formatos modernos, tamaños responsive y lazy loading por defecto."
+          },
+          {
+            "lead": "SEO técnico bien configurado",
+            "text": "metadatos, sitemaps, datos estructurados e imágenes OG."
+          },
+          {
+            "lead": "Web accesible",
+            "text": "probada con teclado y lector de pantalla, no solo con un checker de contraste."
+          },
+          {
+            "lead": "Auditorías Lighthouse repetibles",
+            "text": "métricas medidas en CI para que no se degraden tras el lanzamiento."
+          }
+        ],
+        "ctaLabel": "Iniciar un proyecto"
+      },
+      "process": {
+        "badge": "Cómo trabajo",
+        "heading": "Un proceso claro y honesto",
+        "lead": "Cuatro fases, un único interlocutor, sin sorpresas.",
+        "steps": [
+          {
+            "title": "Descubrimiento",
+            "description": "Una conversación sobre tus objetivos, tu audiencia y qué significa el éxito para tu proyecto. Sin compromiso."
+          },
+          {
+            "title": "Propuesta",
+            "description": "Alcance, plazos y coste claros. Una sola página, lenguaje sencillo y precio cerrado."
+          },
+          {
+            "title": "Diseño y desarrollo",
+            "description": "Ciclos cortos con revisiones periódicas. Ves cómo evoluciona la web a medida que se construye."
+          },
+          {
+            "title": "Lanzamiento y soporte",
+            "description": "Despliegue, entrega y acompañamiento. Iterar después del lanzamiento es sencillo."
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Hablemos",
+        "heading": "¿Tienes un proyecto en mente?",
+        "description": "Envíame un mensaje corto con lo que estás construyendo y lo que necesitas. Leo cada mensaje y respondo en un día laborable.",
+        "primary": "Iniciar un proyecto",
+        "secondary": "Más sobre mí"
+      }
+    },
+    "contact": {
+      "meta": {
+        "title": "Contacto",
+        "description": "¿Estás empezando algo nuevo? Diseño y desarrollo webs desde cero. Cuéntame tu proyecto y te responderé en 1 día laborable."
+      },
+      "hero": {
+        "badge": "Iniciar un proyecto",
+        "titleLead": "Cuéntame tu",
+        "titleHighlight": "nuevo proyecto",
+        "description": "Me encantará leerte. Envíame un mensaje con el formulario de abajo o escríbeme por cualquiera de los otros canales."
+      },
+      "formTitle": "Detalles del proyecto",
+      "channelsTitle": "Otros canales",
+      "channelsSubtitle": "¿Prefieres un canal directo? Elige el que mejor te venga.",
+      "emailLabel": "Email",
+      "emailNote": "Escríbenos",
+      "socialNote": "Síguenos",
+      "basedIn": "Con base en {country}"
+    },
+    "home": {
+      "meta": {
+        "title": "Tema gratuito y open source para Astro 7",
+        "description": "Astro Rocket es un tema inicial gratuito y rapidísimo para Astro 7 con el que construir cualquier proyecto: más de 57 componentes diseñados, 12 temas de color, modo oscuro e i18n integrado."
+      },
+      "hero": {
+        "badge": "Disponible para nuevos proyectos",
+        "titleLine1": "Astro Rocket —",
+        "titleLine2": "Diseñador web",
+        "titleLine3": "y desarrollador",
+        "description": "Un tema inicial gratuito y rapidísimo para Astro 7 con el que construir cualquier proyecto: más de 57 componentes diseñados, 12 temas de color y modo oscuro.",
+        "descriptionMobile": "Un tema inicial gratuito y rapidísimo para Astro 7, con más de 57 componentes diseñados.",
+        "github": "Consíguelo en GitHub",
+        "getStarted": "Comenzar"
+      },
+      "services": {
+        "badge": "Servicios",
+        "heading": "Qué hago",
+        "lead": "Del concepto al lanzamiento.",
+        "learnMore": "Más información",
+        "cards": [
+          {
+            "icon": "layout",
+            "title": "Diseño web",
+            "description": "Layouts cuidados que ponen tu contenido en primer lugar. Diseñados para la claridad, el equilibrio y la forma en que la gente realmente lee en la web."
+          },
+          {
+            "icon": "code",
+            "title": "Desarrollo web",
+            "description": "Sitios modernos construidos con Astro y Tailwind. Ligeros, accesibles y listos para crecer con tu negocio, sin dependencia de plantillas."
+          },
+          {
+            "icon": "zap",
+            "title": "SEO y rendimiento",
+            "description": "Páginas que cargan al instante y posicionan bien desde el lanzamiento. Core Web Vitals, metadatos y datos estructurados, bien hechos."
+          }
+        ]
+      },
+      "portfolio": {
+        "badge": "Trabajo seleccionado",
+        "heading": "Proyectos que he desarrollado",
+        "lead": "Una selección de trabajos recientes.",
+        "viewAll": "Ver todos los proyectos"
+      },
+      "testimonials": {
+        "badge": "Testimonios",
+        "heading": "Lo que dicen los clientes",
+        "lead": "Sustituye estos textos por testimonios reales de tus clientes.",
+        "items": [
+          {
+            "quote": "La nueva web se lanzó en plazo y cumplió todos los objetivos que marcamos. El rendimiento mejoró muchísimo: bajaron los tiempos de carga y el feedback de nuestros clientes ha sido muy positivo.",
+            "name": "Alex Morgan",
+            "role": "Founder, Bright Studio"
+          },
+          {
+            "quote": "Todo fue claro desde la primera conversación hasta la entrega final. Se hicieron las preguntas adecuadas, estuvimos informados durante todo el proceso y el resultado superó lo que imaginábamos. Lo recomendaría sin dudar.",
+            "name": "Sarah Chen",
+            "role": "CEO, Luma Agency"
+          }
+        ]
+      },
+      "aboutTeaser": {
+        "badge": "Sobre mí",
+        "headingLine1": "Diseñador, desarrollador",
+        "headingLine2": "y bloguero.",
+        "para1WithLocation": "Dieciséis años de experiencia práctica, con base en {location} y disponible para clientes de todo el mundo. Trabajo con Astro porque encaja con mi forma de entender la web: ligera, con intención y hecha para durar.",
+        "para1NoLocation": "Dieciséis años de experiencia práctica y disponible para clientes de todo el mundo. Trabajo con Astro porque encaja con mi forma de entender la web: ligera, con intención y hecha para durar.",
+        "para2": "En el blog comparto ideas y decisiones que marcan mi forma de trabajar.",
+        "moreAboutMe": "Más sobre mí",
+        "statsIntro": "Algunos datos sobre mí.",
+        "stat1": "16 años de experiencia",
+        "stat2": "Construyendo con Astro",
+        "stat3": "Trabajando en todo el mundo",
+        "basedIn": "Con base en"
+      },
+      "blog": {
+        "badge": "Del blog",
+        "heading": "Destacados",
+        "viewAll": "Ver todos los artículos"
+      },
+      "cta": {
+        "badge": "Hablemos",
+        "heading": "¿Vas a empezar algo nuevo?",
+        "description": "Diseño y desarrollo webs nuevas desde cero: cada proyecto, de principio a fin, lo llevo personalmente. Cuéntame qué tienes en mente.",
+        "primary": "Iniciar un proyecto",
+        "secondary": "Más sobre mí"
+      }
+    }
+  }
+}

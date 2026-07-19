@@ -32,17 +32,14 @@ export interface I18nConfig {
 }
 
 const i18nConfig: I18nConfig = {
-  enabled: false,
-  defaultLocale: 'en',
-  locales: ['en'],
+  enabled: true,
+  defaultLocale: 'es',
+  locales: ['es', 'en'],
   localeNames: {
-    en: 'English',
-    nl: 'Nederlands',
-    de: 'Deutsch',
-    fr: 'Français',
     es: 'Español',
+    en: 'English',
   },
-  detectBrowserLocale: false,
+  detectBrowserLocale: true,
 };
 
 export default i18nConfig;
