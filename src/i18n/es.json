@@ -125,11 +125,11 @@
     "badge": "404 — página no encontrada",
     "titleLead": "Página no",
     "titleHighlight": "encontrada.",
-    "description": "Esta página se ha movido, eliminado o nunca existió. Volvamos a ponerte en el camino correcto.",
+    "description": "Esta página se ha movido, eliminado o nunca existió. Volvamos al camino correcto.",
     "backHome": "Volver a la página principal",
     "browseBlog": "Explorar el blog",
     "tryInstead": "Prueba una de estas en su lugar",
-    "projectsDesc": "Trabajo seleccionado y estudios de caso.",
+    "projectsDesc": "Trabajos destacados y casos de estudio.",
     "blogDesc": "Notas sobre diseño, código y artesanía.",
     "contactTitle": "Contacto",
     "contactDesc": "Inicia una conversación sobre tu proyecto."
@@ -521,21 +521,25 @@
     "contact": {
       "meta": {
         "title": "Contacto",
-        "description": "¿Estás empezando algo nuevo? Diseño y desarrollo webs desde cero. Cuéntame tu proyecto y te responderé en 1 día laborable."
+        "description": "Contacto de domoticarte para marcas y agencias del sector domótica y smart home. Envía propuestas de colaboración, patrocinios y acciones comerciales para el blog y YouTube. Las consultas técnicas se atienden en nuestros canales de comunidad."
       },
       "hero": {
-        "badge": "Iniciar un proyecto",
-        "titleLead": "Cuéntame tu",
-        "titleHighlight": "nuevo proyecto",
-        "description": "Me encantará leerte. Envíame un mensaje con el formulario de abajo o escríbeme por cualquiera de los otros canales."
+        "badge": "Contacto",
+        "titleLead": "Habla con",
+        "titleHighlight": "nosotros",
+        "description": "Si eres una marca y quieres colaborar con domoticarte, este es el lugar adecuado — ¿Una duda personal o consulta técnica? Te responderemos en nuestra comunidad y canales directos."
       },
-      "formTitle": "Detalles del proyecto",
+      "formTitle": "Formulario de Contacto",
+      "collaborationNotice": {
+        "intro": "Si escribes en nombre de una marca, agencia o gabinete de prensa, revisa antes la página de",
+        "linkLabel": "colaboraciones",
+        "outro": ". Ahí encontrarás los criterios, la ética editorial y las directrices que seguimos en nuestros vídeos y artículos."
+      },
       "channelsTitle": "Otros canales",
-      "channelsSubtitle": "¿Prefieres un canal directo? Elige el que mejor te venga.",
+      "channelsSubtitle": "¿Prefieres algo más directo? Elige el canal que mejor te encaje.",
       "emailLabel": "Email",
-      "emailNote": "Escríbenos",
-      "socialNote": "Síguenos",
-      "basedIn": "Con base en {country}"
+      "emailNote": "Envíanos un mensaje",
+      "socialNote": "Síguenos"
     },
     "home": {
       "meta": {

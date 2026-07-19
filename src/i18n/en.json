@@ -195,8 +195,21 @@
       "hero": {
         "badge": "About",
         "titleLead": "Astro Rocket —",
-        "typingWords": ["Lightning-fast", "Starter theme", "57 Components", "12 Themes", "Dark Mode", "Built-in i18n"],
-        "typingWordsMobile": ["Lightning-fast", "Starter theme", "12 Themes", "Dark Mode", "Built-in i18n"],
+        "typingWords": [
+          "Lightning-fast",
+          "Starter theme",
+          "57 Components",
+          "12 Themes",
+          "Dark Mode",
+          "Built-in i18n"
+        ],
+        "typingWordsMobile": [
+          "Lightning-fast",
+          "Starter theme",
+          "12 Themes",
+          "Dark Mode",
+          "Built-in i18n"
+        ],
         "description": "A free, open-source Astro 7 starter\u00a0theme to build anything on."
       },
       "whatYouGet": {
@@ -256,9 +269,21 @@
         "heading": "Built with intention",
         "lead": "Every decision in Astro Rocket, from component structure to default config, is driven by the same three principles.",
         "items": [
-          { "icon": "zap", "title": "Performance First", "description": "Zero JavaScript by default. Every component is optimised for speed, Core Web Vitals, and lean output." },
-          { "icon": "award", "title": "Developer Experience", "description": "TypeScript throughout, sensible defaults, and a component library you can drop straight into any page." },
-          { "icon": "rocket", "title": "Modern from the Ground Up", "description": "Astro 7, Tailwind CSS 4, and a clean architecture that's easy to extend and maintain." }
+          {
+            "icon": "zap",
+            "title": "Performance First",
+            "description": "Zero JavaScript by default. Every component is optimised for speed, Core Web Vitals, and lean output."
+          },
+          {
+            "icon": "award",
+            "title": "Developer Experience",
+            "description": "TypeScript throughout, sensible defaults, and a component library you can drop straight into any page."
+          },
+          {
+            "icon": "rocket",
+            "title": "Modern from the Ground Up",
+            "description": "Astro 7, Tailwind CSS 4, and a clean architecture that's easy to extend and maintain."
+          }
         ]
       },
       "stack": {
@@ -275,22 +300,52 @@
             "icon": "rocket",
             "title": "About Astro",
             "items": [
-              { "question": "What is Astro?", "answer": "Astro is a modern web framework built for content-driven sites. It ships zero JavaScript by default — only sending what the page actually needs. The result is fast load times, excellent Core Web Vitals scores, and lean, maintainable code." },
-              { "question": "Why build with Astro?", "answer": "Astro is the right tool for content-heavy sites: minimal JavaScript, clean HTML, great SEO out of the box, and a developer experience that stays out of your way. It's lean, purposeful, and built to last." },
-              { "question": "What can I build with Astro Rocket?", "answer": "Portfolios, business sites, marketing pages, blogs, documentation sites — any content-driven project. Astro Rocket gives you the structure, components, and defaults to hit the ground running." },
-              { "question": "Is Astro Rocket listed on the official Astro themes directory?", "answer": "Yes. <a href=\"https://astro.build/themes/details/astro-rocket/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">Astro Rocket</a> is listed on the official Astro themes directory as a free, production-ready theme." },
-              { "question": "Will Astro Rocket keep up with new Astro releases?", "answer": "Yes. Astro Rocket is actively maintained and updated to track new Astro releases. Follow along on the blog or watch the GitHub repository for updates." }
+              {
+                "question": "What is Astro?",
+                "answer": "Astro is a modern web framework built for content-driven sites. It ships zero JavaScript by default — only sending what the page actually needs. The result is fast load times, excellent Core Web Vitals scores, and lean, maintainable code."
+              },
+              {
+                "question": "Why build with Astro?",
+                "answer": "Astro is the right tool for content-heavy sites: minimal JavaScript, clean HTML, great SEO out of the box, and a developer experience that stays out of your way. It's lean, purposeful, and built to last."
+              },
+              {
+                "question": "What can I build with Astro Rocket?",
+                "answer": "Portfolios, business sites, marketing pages, blogs, documentation sites — any content-driven project. Astro Rocket gives you the structure, components, and defaults to hit the ground running."
+              },
+              {
+                "question": "Is Astro Rocket listed on the official Astro themes directory?",
+                "answer": "Yes. <a href=\"https://astro.build/themes/details/astro-rocket/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">Astro Rocket</a> is listed on the official Astro themes directory as a free, production-ready theme."
+              },
+              {
+                "question": "Will Astro Rocket keep up with new Astro releases?",
+                "answer": "Yes. Astro Rocket is actively maintained and updated to track new Astro releases. Follow along on the blog or watch the GitHub repository for updates."
+              }
             ]
           },
           {
             "icon": "code-2",
             "title": "Using the theme",
             "items": [
-              { "question": "Is it free to use?", "answer": "Yes, completely free. Astro Rocket is MIT licensed — use it for personal and commercial projects, no attribution required." },
-              { "question": "How do I switch themes?", "answer": "Change a single line in your config. Astro Rocket ships with 12 hand-crafted colour themes — swap between them instantly without touching a line of CSS." },
-              { "question": "Does it support TypeScript?", "answer": "Yes, TypeScript is used throughout. All components, configs, and utilities are fully typed." },
-              { "question": "How do I add my own language for i18n?", "answer": "Astro Rocket's i18n is config-driven. Add your locale to the i18n config file, create a matching translation file, and the routing and UI adapt automatically." },
-              { "question": "Where do I report bugs or suggest features?", "answer": "Open an issue or start a discussion on the <a href=\"https://github.com/hansmartensdev/astro-rocket\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">GitHub repository</a>. Contributions and feedback are always welcome." }
+              {
+                "question": "Is it free to use?",
+                "answer": "Yes, completely free. Astro Rocket is MIT licensed — use it for personal and commercial projects, no attribution required."
+              },
+              {
+                "question": "How do I switch themes?",
+                "answer": "Change a single line in your config. Astro Rocket ships with 12 hand-crafted colour themes — swap between them instantly without touching a line of CSS."
+              },
+              {
+                "question": "Does it support TypeScript?",
+                "answer": "Yes, TypeScript is used throughout. All components, configs, and utilities are fully typed."
+              },
+              {
+                "question": "How do I add my own language for i18n?",
+                "answer": "Astro Rocket's i18n is config-driven. Add your locale to the i18n config file, create a matching translation file, and the routing and UI adapt automatically."
+              },
+              {
+                "question": "Where do I report bugs or suggest features?",
+                "answer": "Open an issue or start a discussion on the <a href=\"https://github.com/hansmartensdev/astro-rocket\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">GitHub repository</a>. Contributions and feedback are always welcome."
+              }
             ]
           }
         ]
@@ -301,9 +356,18 @@
         "description": "Astro Rocket is free, open source, and MIT licensed. Browse the source, open issues, submit PRs, or just clone it and build something great.",
         "button": "View on GitHub",
         "cards": [
-          { "title": "Made by Hans Martens Dev", "text": "Astro Rocket was designed and built by <a href=\"https://hansmartens.dev\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">Hans Martens Dev</a> — a freelance Astro developer who uses it as the foundation for client projects." },
-          { "title": "MIT License", "text": "Free to use in personal and commercial projects. No attribution required, though a star on GitHub is always appreciated." },
-          { "title": "Actively maintained", "text": "The theme is kept up to date with new Astro releases and regularly improved based on community feedback." }
+          {
+            "title": "Made by Hans Martens Dev",
+            "text": "Astro Rocket was designed and built by <a href=\"https://hansmartens.dev\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2 decoration-brand-500 hover:text-brand-400 transition-colors\">Hans Martens Dev</a> — a freelance Astro developer who uses it as the foundation for client projects."
+          },
+          {
+            "title": "MIT License",
+            "text": "Free to use in personal and commercial projects. No attribution required, though a star on GitHub is always appreciated."
+          },
+          {
+            "title": "Actively maintained",
+            "text": "The theme is kept up to date with new Astro releases and regularly improved based on community feedback."
+          }
         ]
       },
       "cta": {
@@ -324,7 +388,11 @@
         "titleLead": "What I offer —",
         "titleHighlight": "designed, built, and tuned.",
         "description": "Three core services, one consistent standard. From the first wireframe to the final Lighthouse score, every project gets the same attention to detail.",
-        "jumpLabels": ["Web Design", "Development", "Performance"]
+        "jumpLabels": [
+          "Web Design",
+          "Development",
+          "Performance"
+        ]
       },
       "design": {
         "badge": "Design",
@@ -424,10 +492,22 @@
         "heading": "A clear, honest process",
         "lead": "Four stages, one point of contact, no surprises.",
         "steps": [
-          { "title": "Discovery", "description": "A conversation about your goals, your audience, and what success looks like. No obligation." },
-          { "title": "Proposal", "description": "A clear scope, timeline, and cost. One page, plain language, fixed price." },
-          { "title": "Design & Build", "description": "Short cycles with regular check-ins. You see the site evolve as it's built." },
-          { "title": "Launch & Support", "description": "Deploy, hand over, stay available. Iteration after launch is straightforward." }
+          {
+            "title": "Discovery",
+            "description": "A conversation about your goals, your audience, and what success looks like. No obligation."
+          },
+          {
+            "title": "Proposal",
+            "description": "A clear scope, timeline, and cost. One page, plain language, fixed price."
+          },
+          {
+            "title": "Design & Build",
+            "description": "Short cycles with regular check-ins. You see the site evolve as it's built."
+          },
+          {
+            "title": "Launch & Support",
+            "description": "Deploy, hand over, stay available. Iteration after launch is straightforward."
+          }
         ]
       },
       "cta": {
@@ -441,21 +521,25 @@
     "contact": {
       "meta": {
         "title": "Contact",
-        "description": "Starting something new? I design and build new websites from scratch — tell me about your project and I'll get back to you within 1 business day."
+        "description": "Contact for domoticarte aimed at brands and agencies in the home automation and smart home sector. Send collaboration proposals, sponsorships, and commercial opportunities for the blog and YouTube channel. Technical inquiries are handled through our community channels."
       },
       "hero": {
-        "badge": "Start a project",
-        "titleLead": "Tell me about your",
-        "titleHighlight": "new project",
-        "description": "I'd love to hear from you. Send a message with the form below, or reach out on one of the other channels below."
+        "badge": "Contact",
+        "titleLead": "Talk with",
+        "titleHighlight": "us",
+        "description": "If you're a brand and want to collaborate with domoticarte, this is the right place — Personal question or technical inquiry? We'll respond through our community and direct channels."
       },
-      "formTitle": "Project details",
+      "formTitle": "Contact form",
+      "collaborationNotice": {
+        "intro": "If you're writing on behalf of a brand, agency, or PR team, please review the",
+        "linkLabel": "collaborations page",
+        "outro": " first. There you'll find the criteria, editorial ethics, and guidelines we follow across our videos and articles."
+      },
       "channelsTitle": "Other channels",
-      "channelsSubtitle": "Prefer a direct channel? Pick whichever works best.",
+      "channelsSubtitle": "Prefer a more direct channel? Pick whichever suits you best.",
       "emailLabel": "Email",
       "emailNote": "Drop us a line",
-      "socialNote": "Follow along",
-      "basedIn": "Based in {country}"
+      "socialNote": "Follow along"
     },
     "home": {
       "meta": {
@@ -478,9 +562,21 @@
         "lead": "From concept to launch.",
         "learnMore": "Learn more",
         "cards": [
-          { "icon": "layout", "title": "Web Design", "description": "Thoughtful layouts that put your content first. Designed for clarity, balance, and the way people actually read on the web." },
-          { "icon": "code", "title": "Web Development", "description": "Modern sites built with Astro and Tailwind. Lean, accessible, and ready to scale with your business — no template lock-in." },
-          { "icon": "zap", "title": "SEO & Performance", "description": "Pages that load instantly and rank well from launch. Core Web Vitals, metadata, and structured data, done properly." }
+          {
+            "icon": "layout",
+            "title": "Web Design",
+            "description": "Thoughtful layouts that put your content first. Designed for clarity, balance, and the way people actually read on the web."
+          },
+          {
+            "icon": "code",
+            "title": "Web Development",
+            "description": "Modern sites built with Astro and Tailwind. Lean, accessible, and ready to scale with your business — no template lock-in."
+          },
+          {
+            "icon": "zap",
+            "title": "SEO & Performance",
+            "description": "Pages that load instantly and rank well from launch. Core Web Vitals, metadata, and structured data, done properly."
+          }
         ]
       },
       "portfolio": {
@@ -494,8 +590,16 @@
         "heading": "What clients say",
         "lead": "Replace these with your own client quotes.",
         "items": [
-          { "quote": "The new site launched on time and hit every goal we set. Performance improved dramatically — load times dropped and the feedback from our customers has been overwhelmingly positive.", "name": "Alex Morgan", "role": "Founder, Bright Studio" },
-          { "quote": "Straightforward from first conversation to final handover. The right questions were asked, we were kept in the loop throughout, and the end result exceeded what we imagined. Would recommend without hesitation.", "name": "Sarah Chen", "role": "CEO, Luma Agency" }
+          {
+            "quote": "The new site launched on time and hit every goal we set. Performance improved dramatically — load times dropped and the feedback from our customers has been overwhelmingly positive.",
+            "name": "Alex Morgan",
+            "role": "Founder, Bright Studio"
+          },
+          {
+            "quote": "Straightforward from first conversation to final handover. The right questions were asked, we were kept in the loop throughout, and the end result exceeded what we imagined. Would recommend without hesitation.",
+            "name": "Sarah Chen",
+            "role": "CEO, Luma Agency"
+          }
         ]
       },
       "aboutTeaser": {
