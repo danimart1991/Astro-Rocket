@@ -49,6 +49,8 @@ export interface NavItem {
   labelKey?: string;
   /** Per-locale label/path overrides, keyed by locale code. */
   locales?: Record<string, NavItemOverride>;
+  /** Hide this item for specific locales. */
+  hiddenInLocales?: string[];
 }
 
 export interface LegalLink {
@@ -59,6 +61,8 @@ export interface LegalLink {
   labelKey?: string;
   /** Per-locale label/path overrides, keyed by locale code. */
   locales?: Record<string, NavItemOverride>;
+  /** Hide this item for specific locales. */
+  hiddenInLocales?: string[];
 }
 
 /** A nav item resolved for one locale: label translated, href locale-prefixed. */
@@ -80,7 +84,15 @@ export const navItems: NavItem[] = [
     order: 5,
     labelKey: 'nav.items.collaborations',
   },
-  { label: 'Contact', href: '/contact', order: 6, labelKey: 'nav.items.contact' },
+  {
+    label: 'Community',
+    href: 'https://t.me/domoticarte',
+    order: 6,
+    external: true,
+    labelKey: 'nav.items.community',
+    hiddenInLocales: ['en'],
+  },
+  { label: 'Contact', href: '/contact', order: 7, labelKey: 'nav.items.contact' },
 ];
 
 export const footerNavItems: NavItem[] = [
@@ -95,11 +107,19 @@ export const footerNavItems: NavItem[] = [
     order: 5,
     labelKey: 'nav.items.collaborations',
   },
-  { label: 'Contact', href: '/contact', order: 6, labelKey: 'nav.items.contact' },
+  {
+    label: 'Community',
+    href: 'https://t.me/domoticarte',
+    order: 6,
+    external: true,
+    labelKey: 'nav.items.community',
+    hiddenInLocales: ['en'],
+  },
+  { label: 'Contact', href: '/contact', order: 7, labelKey: 'nav.items.contact' },
   {
     label: 'GitHub',
     href: 'https://github.com/hansmartensdev/Astro-Rocket',
-    order: 7,
+    order: 8,
     external: true,
   },
 ];
@@ -141,6 +161,7 @@ export function resolveNavItem(item: NavItem | LegalLink, locale: Locale): Resol
 export function getNavItems(locale: Locale = defaultLocale): ResolvedNavItem[] {
   return [...navItems]
     .sort((a, b) => a.order - b.order)
+    .filter((item) => !item.hiddenInLocales?.includes(locale))
     .map((item) => resolveNavItem(item, locale));
 }
 
@@ -152,6 +173,7 @@ export function getNavItems(locale: Locale = defaultLocale): ResolvedNavItem[] {
 export function getFooterNavItems(locale: Locale = defaultLocale): ResolvedNavItem[] {
   return [...footerNavItems]
     .sort((a, b) => a.order - b.order)
+    .filter((item) => !item.hiddenInLocales?.includes(locale))
     .map((item) => resolveNavItem(item, locale));
 }
 
@@ -160,7 +182,9 @@ export function getFooterNavItems(locale: Locale = defaultLocale): ResolvedNavIt
  * Returned in declaration order.
  */
 export function getLegalLinks(locale: Locale = defaultLocale): ResolvedNavItem[] {
-  return legalLinks.map((item) => resolveNavItem(item, locale));
+  return legalLinks
+    .filter((item) => !item.hiddenInLocales?.includes(locale))
+    .map((item) => resolveNavItem(item, locale));
 }
 
 /**
