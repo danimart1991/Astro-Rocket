@@ -74,7 +74,13 @@ export const navItems: NavItem[] = [
   { label: 'Projects', href: '/projects', order: 2, labelKey: 'nav.items.projects' },
   { label: 'Blog', href: '/blog', order: 3, labelKey: 'nav.items.blog' },
   { label: 'About', href: '/about', order: 4, labelKey: 'nav.items.about' },
-  { label: 'Contact', href: '/contact', order: 5, labelKey: 'nav.items.contact' },
+  {
+    label: 'Collaborations',
+    href: '/collaborations',
+    order: 5,
+    labelKey: 'nav.items.collaborations',
+  },
+  { label: 'Contact', href: '/contact', order: 6, labelKey: 'nav.items.contact' },
 ];
 
 export const footerNavItems: NavItem[] = [
@@ -83,8 +89,19 @@ export const footerNavItems: NavItem[] = [
   { label: 'Projects', href: '/projects', order: 2, labelKey: 'nav.items.projects' },
   { label: 'Blog', href: '/blog', order: 3, labelKey: 'nav.items.blog' },
   { label: 'About', href: '/about', order: 4, labelKey: 'nav.items.about' },
-  { label: 'Contact', href: '/contact', order: 5, labelKey: 'nav.items.contact' },
-  { label: 'GitHub', href: 'https://github.com/hansmartensdev/Astro-Rocket', order: 6, external: true },
+  {
+    label: 'Collaborations',
+    href: '/collaborations',
+    order: 5,
+    labelKey: 'nav.items.collaborations',
+  },
+  { label: 'Contact', href: '/contact', order: 6, labelKey: 'nav.items.contact' },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/hansmartensdev/Astro-Rocket',
+    order: 7,
+    external: true,
+  },
 ];
 
 export const legalLinks: LegalLink[] = [];

@@ -1,0 +1,417 @@
+---
+/**
+ * CollaborationsView — the Collaborations page body.
+ *
+ * Shared by the default-locale route (`/collaborations`) and the locale-
+ * prefixed route (`/<locale>/collaborations`). Copy is read from
+ * `pages.collaborations.*` and internal links are locale-aware.
+ */
+import PageLayout from '@/layouts/PageLayout.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import ProofTile from '@/components/ui/data-display/ProofTile/ProofTile.astro';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { Hero } from '@/components/hero';
+import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
+import siteConfig from '@/config/site.config';
+import { t, tData, defaultLocale, localizedPath } from '@/i18n';
+
+interface Props {
+  locale?: string;
+}
+
+interface IncludedItem {
+  lead: string;
+  text: string;
+}
+
+interface PrincipleSection {
+  badge: string;
+  heading: string;
+  paragraphs: string[];
+  included: IncludedItem[];
+}
+
+interface ProcessStep {
+  title: string;
+  description: string;
+}
+
+const { locale = defaultLocale } = Astro.props;
+
+const includedLabel = t('pages.collaborations.includedLabel', locale);
+const hero = tData<{
+  badge: string;
+  titleLead: string;
+  titleHighlight: string;
+  description: string;
+  jumpLabels: string[];
+}>('pages.collaborations.hero', locale)!;
+const editorial = tData<PrincipleSection>('pages.collaborations.editorial', locale)!;
+const transparency = tData<PrincipleSection>('pages.collaborations.transparency', locale)!;
+const creators = tData<PrincipleSection>('pages.collaborations.creators', locale)!;
+const processSection = tData<{
+  badge: string;
+  heading: string;
+  lead: string;
+  steps: ProcessStep[];
+}>('pages.collaborations.process', locale)!;
+const cta = tData<{
+  badge: string;
+  heading: string;
+  description: string;
+  primary: string;
+  secondary: string;
+  legalNote: string;
+}>('pages.collaborations.cta', locale)!;
+
+const contactUrl = localizedPath('/contact', locale);
+const primaryCtaUrl = `mailto:${siteConfig.email}`;
+---
+
+<PageLayout
+  title={t('pages.collaborations.meta.title', locale)}
+  description={t('pages.collaborations.meta.description', locale)}
+>
+  <Hero layout="centered" size="sm" class="collaborations-hero isolate" showHeroHalo>
+    <Badge slot="badge" variant="brand" pill>
+      <Icon name="heart-handshake" size="sm" />
+      {hero.badge}
+    </Badge>
+
+    <h1 slot="title">
+      <span class="text-foreground">{hero.titleLead}</span><br />
+      <span class="text-brand-500">{hero.titleHighlight}</span>
+    </h1>
+
+    <p slot="description">{hero.description}</p>
+
+    <Fragment slot="actions">
+      <Button size="lg" href="#editorial" variant="outline">
+        {hero.jumpLabels[0]}
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+      <Button size="lg" href="#transparency" variant="outline">
+        {hero.jumpLabels[1]}
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+      <Button size="lg" href="#creators" variant="outline">
+        {hero.jumpLabels[2]}
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+    </Fragment>
+  </Hero>
+
+  <section
+    id="editorial"
+    class="bg-background-secondary border-border border-t py-[var(--space-section-md)]"
+  >
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="glitch:grid-cols-2 glitch:gap-12 glitch:items-start grid gap-10">
+        <div
+          class="glitch:items-start glitch:text-left flex flex-col gap-4 sm:items-center sm:text-center"
+          data-reveal
+          data-reveal-ease="smooth"
+        >
+          <div class="glitch:items-start flex flex-col gap-6 sm:items-center">
+            <Badge variant="brand" pill class="glitch:self-start self-start sm:self-center">
+              <Icon name="pen-tool" size="sm" />
+              {editorial.badge}
+            </Badge>
+            <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+              {editorial.heading}
+            </h2>
+          </div>
+          {
+            editorial.paragraphs.map((paragraph) => (
+              <p class="text-foreground-muted glitch:max-w-none glitch:mx-0 text-lg leading-relaxed sm:mx-auto sm:max-w-xl">
+                {paragraph}
+              </p>
+            ))
+          }
+        </div>
+
+        <div
+          class="glitch:max-w-none glitch:mx-0 sm:mx-auto sm:max-w-xl"
+          data-reveal
+          data-reveal-ease="smooth"
+        >
+          <Card variant="elevated" padding="lg" class="flex h-full flex-col justify-center">
+            <div
+              class="border-border glitch:justify-start mb-4 flex items-center gap-3 border-b pb-4 sm:justify-center"
+            >
+              <div
+                class="from-brand-500/20 to-brand-500/5 text-brand-500 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br"
+              >
+                <Icon name="shield-check" size="md" />
+              </div>
+              <h3 class="font-display text-foreground text-base font-semibold">{includedLabel}</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              {
+                editorial.included.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <Icon name="check" size="sm" class="text-brand-500 mt-1 shrink-0" />
+                    <p class="text-foreground-muted text-sm leading-relaxed">
+                      <span class="text-foreground font-semibold">{item.lead}</span> - {item.text}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="transparency"
+    class="bg-background border-border border-t py-[var(--space-section-md)]"
+  >
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="glitch:grid-cols-2 glitch:gap-12 glitch:items-start grid gap-10">
+        <div
+          class="glitch:order-2 glitch:items-start glitch:text-left flex flex-col gap-4 sm:items-center sm:text-center"
+          data-reveal
+          data-reveal-delay="1"
+          data-reveal-ease="smooth"
+        >
+          <div class="glitch:items-start flex flex-col gap-6 sm:items-center">
+            <Badge variant="brand" pill class="glitch:self-start self-start sm:self-center">
+              <Icon name="eye" size="sm" />
+              {transparency.badge}
+            </Badge>
+            <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+              {transparency.heading}
+            </h2>
+          </div>
+          {
+            transparency.paragraphs.map((paragraph) => (
+              <p class="text-foreground-muted glitch:max-w-none glitch:mx-0 text-lg leading-relaxed sm:mx-auto sm:max-w-xl">
+                {paragraph}
+              </p>
+            ))
+          }
+        </div>
+
+        <div
+          class="glitch:order-1 glitch:max-w-none glitch:mx-0 sm:mx-auto sm:max-w-xl"
+          data-reveal
+          data-reveal-ease="smooth"
+        >
+          <Card variant="elevated" padding="lg" class="flex h-full flex-col justify-center">
+            <div
+              class="border-border glitch:justify-start mb-4 flex items-center gap-3 border-b pb-4 sm:justify-center"
+            >
+              <div
+                class="from-brand-500/20 to-brand-500/5 text-brand-500 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br"
+              >
+                <Icon name="megaphone" size="md" />
+              </div>
+              <h3 class="font-display text-foreground text-base font-semibold">{includedLabel}</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              {
+                transparency.included.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <Icon name="check" size="sm" class="text-brand-500 mt-1 shrink-0" />
+                    <p class="text-foreground-muted text-sm leading-relaxed">
+                      <span class="text-foreground font-semibold">{item.lead}</span> - {item.text}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="creators"
+    class="bg-background-secondary border-border border-t py-[var(--space-section-md)]"
+  >
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="glitch:grid-cols-2 glitch:gap-12 glitch:items-start grid gap-10">
+        <div
+          class="glitch:items-start glitch:text-left flex flex-col gap-4 sm:items-center sm:text-center"
+          data-reveal
+          data-reveal-ease="smooth"
+        >
+          <div class="glitch:items-start flex flex-col gap-6 sm:items-center">
+            <Badge variant="brand" pill class="glitch:self-start self-start sm:self-center">
+              <Icon name="users" size="sm" />
+              {creators.badge}
+            </Badge>
+            <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+              {creators.heading}
+            </h2>
+          </div>
+          {
+            creators.paragraphs.map((paragraph) => (
+              <p class="text-foreground-muted glitch:max-w-none glitch:mx-0 text-lg leading-relaxed sm:mx-auto sm:max-w-xl">
+                {paragraph}
+              </p>
+            ))
+          }
+        </div>
+
+        <div
+          class="glitch:max-w-none glitch:mx-0 sm:mx-auto sm:max-w-xl"
+          data-reveal
+          data-reveal-delay="1"
+          data-reveal-ease="smooth"
+        >
+          <Card variant="elevated" padding="lg" class="flex h-full flex-col justify-center">
+            <div
+              class="border-border glitch:justify-start mb-4 flex items-center gap-3 border-b pb-4 sm:justify-center"
+            >
+              <div
+                class="from-brand-500/20 to-brand-500/5 text-brand-500 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br"
+              >
+                <Icon name="link" size="md" />
+              </div>
+              <h3 class="font-display text-foreground text-base font-semibold">{includedLabel}</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              {
+                creators.included.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <Icon name="check" size="sm" class="text-brand-500 mt-1 shrink-0" />
+                    <p class="text-foreground-muted text-sm leading-relaxed">
+                      <span class="text-foreground font-semibold">{item.lead}</span> - {item.text}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background border-border border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+      <div class="flex flex-col items-center gap-4 text-center" data-reveal>
+        <div class="flex flex-col items-center gap-6">
+          <Badge variant="brand" pill>
+            <Icon name="list-checks" size="sm" />
+            {processSection.badge}
+          </Badge>
+          <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+            {processSection.heading}
+          </h2>
+        </div>
+        <p class="text-foreground-muted mx-auto max-w-2xl text-lg text-balance">
+          {processSection.lead}
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          processSection.steps.map((step, i) => (
+            <ProofTile
+              number={i + 1}
+              title={step.title}
+              data-reveal
+              data-reveal-delay={i || undefined}
+            >
+              {step.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-background-secondary border-border relative z-10 border-t py-[var(--space-section-md)]"
+  >
+    <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <Badge variant="brand" pill class="mb-6">
+        <Icon name="mail" size="sm" />
+        {cta.badge}
+      </Badge>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold text-balance">
+        {cta.heading}
+      </h2>
+      <p class="text-foreground-muted mb-8 text-lg text-balance">
+        {cta.description}
+      </p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button size="lg" href={primaryCtaUrl} class="cta-btn-brand">
+          {cta.primary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+        <Button size="lg" variant="brand-outline" href={contactUrl}>
+          {cta.secondary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+      <p class="text-foreground-muted mt-6 text-sm text-balance">{cta.legalNote}</p>
+    </div>
+
+    <LetterGlitchBand>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold text-balance">
+        {cta.heading}
+      </h2>
+      <p class="text-foreground-muted mb-8 text-lg text-balance">
+        {cta.description}
+      </p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button size="lg" href={primaryCtaUrl} class="hero-btn-brand">
+          {cta.primary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+        <Button size="lg" variant="outline" href={contactUrl}>
+          {cta.secondary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+      <p class="text-foreground-muted mt-6 text-sm text-balance">{cta.legalNote}</p>
+    </LetterGlitchBand>
+  </section>
+</PageLayout>
+
+<style is:global>
+  .collaborations-hero .hero-jump-arrow {
+    animation: hero-jump-arrow-bounce 1.8s ease-in-out infinite;
+  }
+
+  @keyframes hero-jump-arrow-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(4px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .collaborations-hero .hero-jump-arrow {
+      animation: none;
+    }
+  }
+
+  html {
+    scroll-padding-top: 4rem;
+  }
+
+  @media (max-height: 600px) {
+    html {
+      scroll-padding-top: 4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 4rem;
+    }
+  }
+</style>

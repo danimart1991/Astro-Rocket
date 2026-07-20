@@ -18,6 +18,7 @@
       "projects": "Proyectos",
       "blog": "Blog",
       "about": "Acerca de",
+      "collaborations": "Colaboraciones",
       "contact": "Contacto"
     }
   },
@@ -531,15 +532,143 @@
       },
       "formTitle": "Formulario de Contacto",
       "collaborationNotice": {
-        "intro": "Si escribes en nombre de una marca, agencia o gabinete de prensa, revisa antes la página de",
+        "intro": "Si escribes en nombre de una marca, agencia o gabinete de prensa, revisa y entiende antes la página de",
         "linkLabel": "colaboraciones",
-        "outro": ". Ahí encontrarás los criterios, la ética editorial y las directrices que seguimos en nuestros vídeos y artículos."
+        "outro": ". Ahí encontrarás los criterios, la ética editorial y las directrices que esperamos que conozcas antes de contactar."
       },
       "channelsTitle": "Otros canales",
       "channelsSubtitle": "¿Prefieres algo más directo? Elige el canal que mejor te encaje.",
       "emailLabel": "Email",
       "emailNote": "Envíanos un mensaje",
       "socialNote": "Síguenos"
+    },
+    "collaborations": {
+      "meta": {
+        "title": "Colaboraciones",
+        "description": "Política de colaboraciones y guía ética de domoticarte. Principios de independencia, transparencia y criterios para trabajar con marcas."
+      },
+      "hero": {
+        "badge": "Colaboraciones",
+        "titleLead": "Cómo colaboramos",
+        "titleHighlight": "con ética y transparencia",
+        "description": "La confianza de nuestra comunidad es lo primero. Esta página explica los principios, límites y criterios que seguimos en cada colaboración.",
+        "jumpLabels": [
+          "Independencia",
+          "Transparencia",
+          "Creadores y afiliación"
+        ]
+      },
+      "includedLabel": "Qué garantizamos",
+      "editorial": {
+        "badge": "Independencia",
+        "heading": "Control creativo total",
+        "paragraphs": [
+          "No aceptamos colaboraciones que exijan modificar, suavizar u ocultar nuestras opiniones. Nuestro contenido se crea de forma independiente y las marcas no participan en el guion ni en la edición.",
+          "Antes de publicar, la marca puede revisar el contenido solo para señalar errores técnicos, nombres mal escritos o detalles fuera de contexto, pero esa revisión no le da control sobre la opinión ni el enfoque editorial.",
+          "Nuestra opinión y nuestro enfoque editorial no se negocian, exista o no una colaboración pagada.",
+          "Si un producto no convence, no lo recomendamos. Preferimos perder una colaboración antes que recomendar algo en lo que no confiamos."
+        ],
+        "included": [
+          {
+            "lead": "Guion y edición independientes",
+            "text": "La marca no define el enfoque del contenido ni el resultado final."
+          },
+          {
+            "lead": "Revisión factual limitada",
+            "text": "Aceptamos correcciones técnicas o de contexto, no cambios de opinión ni de enfoque."
+          },
+          {
+            "lead": "Opiniones honestas",
+            "text": "Mostramos lo positivo y lo mejorable sin maquillarlo."
+          },
+          {
+            "lead": "Recomendación selectiva",
+            "text": "Solo sugerimos productos útiles y coherentes con el proyecto."
+          }
+        ]
+      },
+      "transparency": {
+        "badge": "Transparencia",
+        "heading": "Marcas, patrocinios y límites claros",
+        "paragraphs": [
+          "Elegimos con quién trabajamos. Si las prácticas de una marca no se alinean con nuestra ética, nos reservamos el derecho a rechazar o finalizar la colaboración.",
+          "Toda colaboración, patrocinio o producto cedido se identifica de forma clara para que siempre se sepa cuándo existe una relación comercial.",
+          "Algunos vídeos pueden incluir segmentos patrocinados. Incluso en ese formato, aplicamos los mismos criterios de independencia y honestidad.",
+          "Podemos trabajar con NDAs o embargos cuando tenga sentido, pero no aceptamos acuerdos de exclusividad."
+        ],
+        "included": [
+          {
+            "lead": "Selección de marcas",
+            "text": "Trabajamos con propuestas alineadas con nuestros valores y audiencia."
+          },
+          {
+            "lead": "Patrocinios identificados",
+            "text": "El contenido publicitario se señala de forma visible y directa."
+          },
+          {
+            "lead": "NDAs y embargos sí",
+            "text": "Podemos respetar confidencialidad y fechas de publicación cuando proceda."
+          },
+          {
+            "lead": "Exclusividades no",
+            "text": "No trabajamos con acuerdos que limiten nuestra independencia en una categoría."
+          }
+        ]
+      },
+      "creators": {
+        "badge": "Comunidad",
+        "heading": "Creadores, afiliados y sostenibilidad",
+        "paragraphs": [
+          "También colaboramos con otros creadores del sector de domótica y tecnología cuando aporta valor real a la comunidad.",
+          "Usamos enlaces de afiliados en artículos y descripciones cuando corresponde. Si compras a través de ellos, recibimos una comisión sin coste extra para ti.",
+          "La afiliación nunca condiciona nuestras opiniones ni la selección de productos. Se aplican exactamente los mismos principios de honestidad e independencia."
+        ],
+        "included": [
+          {
+            "lead": "Colaboraciones entre creadores",
+            "text": "Buscamos contenido útil y bien alineado, no intercambios vacíos."
+          },
+          {
+            "lead": "Afiliación transparente",
+            "text": "Indicamos su uso y mantenemos la neutralidad editorial."
+          },
+          {
+            "lead": "Programas activos",
+            "text": "Amazon Afiliados y AliExpress, siempre bajo los mismos criterios éticos."
+          }
+        ]
+      },
+      "process": {
+        "badge": "Cómo evaluamos",
+        "heading": "Proceso de colaboración",
+        "lead": "Un flujo claro para valorar propuestas sin comprometer la independencia del proyecto.",
+        "steps": [
+          {
+            "title": "Revisión inicial",
+            "description": "Analizamos si la propuesta encaja con el contenido, la audiencia y los valores editoriales."
+          },
+          {
+            "title": "Encaje ético",
+            "description": "Comprobamos transparencia, expectativas y límites para evitar conflictos de interés."
+          },
+          {
+            "title": "Definición de formato",
+            "description": "Si una colaboración avanza, acordamos formato y plazos sin ceder control creativo del contenido."
+          },
+          {
+            "title": "Publicación clara",
+            "description": "Si publicamos contenido, la colaboración se identifica de forma explícita y comprensible."
+          }
+        ]
+      },
+      "cta": {
+        "badge": "¿Quieres colaborar?",
+        "heading": "Si compartimos valores, hablemos",
+        "description": "Si tu marca busca una colaboración ética, transparente y útil para la comunidad, estaremos encantados de escuchar tu propuesta.",
+        "primary": "Escribir por email",
+        "secondary": "Ir a contacto",
+        "legalNote": "Si nos escribes por una propuesta de colaboración, esperamos que hayas leído y entendido los principios descritos en esta página."
+      }
     },
     "home": {
       "meta": {

@@ -34,10 +34,7 @@ const hero = tData<{
 }>('pages.contact.hero', locale)!;
 
 const socialLinks = resolveSocialLinks(siteConfig.socialLinks);
-const collaborationsUrl = localizedPath(
-  locale === 'en' ? '/collaborations' : '/colaboraciones',
-  locale
-);
+const collaborationsUrl = localizedPath('/collaborations', locale);
 
 const channels = [
   {

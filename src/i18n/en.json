@@ -18,6 +18,7 @@
       "projects": "Projects",
       "blog": "Blog",
       "about": "About",
+      "collaborations": "Collaborations",
       "contact": "Contact"
     }
   },
@@ -531,15 +532,143 @@
       },
       "formTitle": "Contact form",
       "collaborationNotice": {
-        "intro": "If you're writing on behalf of a brand, agency, or PR team, please review the",
+        "intro": "If you're writing on behalf of a brand, agency, or PR team, please read and understand the",
         "linkLabel": "collaborations page",
-        "outro": " first. There you'll find the criteria, editorial ethics, and guidelines we follow across our videos and articles."
+        "outro": " first. There you'll find the criteria, editorial ethics, and guidelines we expect you to know before reaching out."
       },
       "channelsTitle": "Other channels",
       "channelsSubtitle": "Prefer a more direct channel? Pick whichever suits you best.",
       "emailLabel": "Email",
       "emailNote": "Drop us a line",
       "socialNote": "Follow along"
+    },
+    "collaborations": {
+      "meta": {
+        "title": "Collaborations",
+        "description": "Collaboration policy and ethical guidelines for domoticarte. Editorial independence, transparency, and partner selection criteria."
+      },
+      "hero": {
+        "badge": "Collaborations",
+        "titleLead": "How we collaborate",
+        "titleHighlight": "with ethics and transparency",
+        "description": "Community trust comes first. This page explains the principles, limits, and standards we apply to every collaboration.",
+        "jumpLabels": [
+          "Independence",
+          "Transparency",
+          "Creators and affiliate links"
+        ]
+      },
+      "includedLabel": "What we guarantee",
+      "editorial": {
+        "badge": "Independence",
+        "heading": "Full creative control",
+        "paragraphs": [
+          "We do not accept collaborations that require us to alter, soften, or hide our opinion. Our content is produced independently, and brands do not take part in scripting or editing.",
+          "Before publication, a brand may review the content only to flag technical mistakes, naming issues, or details taken out of context, but that review does not give them control over our opinion or editorial direction.",
+          "Our opinion and editorial approach are not negotiable, whether or not a collaboration is paid.",
+          "If a product does not convince us, we do not recommend it. We would rather decline a collaboration than promote something we do not trust."
+        ],
+        "included": [
+          {
+            "lead": "Independent scripting and editing",
+            "text": "The brand does not define the final message or editorial angle."
+          },
+          {
+            "lead": "Limited factual review",
+            "text": "We accept technical or context corrections, not opinion or framing changes."
+          },
+          {
+            "lead": "Honest reviews",
+            "text": "We highlight strengths and weaknesses as they are."
+          },
+          {
+            "lead": "Selective recommendations",
+            "text": "We only suggest products that are genuinely useful and relevant."
+          }
+        ]
+      },
+      "transparency": {
+        "badge": "Transparency",
+        "heading": "Clear boundaries for brands and sponsorships",
+        "paragraphs": [
+          "We choose who we work with carefully. If a brand's practices do not align with our ethics, we reserve the right to reject or end the collaboration.",
+          "Every collaboration, sponsorship, or loaned product is disclosed clearly, so you always know when a commercial relationship exists.",
+          "Some videos may include sponsored segments. Even in those cases, we apply the exact same standards of independence and honesty.",
+          "We may work under NDAs or embargoes when appropriate, but we do not accept exclusivity agreements."
+        ],
+        "included": [
+          {
+            "lead": "Partner selection",
+            "text": "We only work with proposals aligned with our values and audience."
+          },
+          {
+            "lead": "Visible sponsorship disclosure",
+            "text": "Advertising content is labeled clearly and explicitly."
+          },
+          {
+            "lead": "NDAs and embargoes allowed",
+            "text": "We can respect confidentiality and launch dates when needed."
+          },
+          {
+            "lead": "No exclusivity",
+            "text": "We do not accept agreements that limit our editorial independence in a category."
+          }
+        ]
+      },
+      "creators": {
+        "badge": "Community",
+        "heading": "Creator collaborations, affiliate links, and sustainability",
+        "paragraphs": [
+          "We also collaborate with other creators in home automation and tech when the result provides real value for the community.",
+          "Some links in articles and video descriptions are affiliate links. If you buy through them, we may receive a commission at no extra cost to you.",
+          "Affiliate programs never influence our opinions or product selection. The same principles of honesty and independence always apply."
+        ],
+        "included": [
+          {
+            "lead": "Creator-to-creator projects",
+            "text": "We focus on useful, aligned content rather than empty cross-promotion."
+          },
+          {
+            "lead": "Transparent affiliate use",
+            "text": "Affiliate links are disclosed and never override editorial judgement."
+          },
+          {
+            "lead": "Active programs",
+            "text": "Amazon Associates and AliExpress, governed by the same ethical standards."
+          }
+        ]
+      },
+      "process": {
+        "badge": "How we evaluate",
+        "heading": "Collaboration process",
+        "lead": "A clear workflow to assess proposals without compromising editorial independence.",
+        "steps": [
+          {
+            "title": "Initial review",
+            "description": "We check whether the proposal fits our content, audience, and editorial principles."
+          },
+          {
+            "title": "Ethical fit",
+            "description": "We review transparency, expectations, and boundaries to avoid conflicts of interest."
+          },
+          {
+            "title": "Format definition",
+            "description": "If there is a fit, we define format and timing while keeping full creative control."
+          },
+          {
+            "title": "Clear publication",
+            "description": "If content is published, the collaboration is disclosed in a clear, understandable way."
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Want to collaborate?",
+        "heading": "If we share values, let's talk",
+        "description": "If your brand is looking for an ethical, transparent collaboration that benefits the community, we'd love to hear your proposal.",
+        "primary": "Email us",
+        "secondary": "Go to contact",
+        "legalNote": "If you contact us with a collaboration proposal, we expect you to have read and understood the principles described on this page."
+      }
     },
     "home": {
       "meta": {
